@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #131313;
+  --primary: #ffffff;
+  --secondary: #333333;
+  --tertiary: #555555;
+  --neutral: #1c1c1c;
+
+  --text-gray: #fff9;
+}
+
+@theme {
+  --color-bg: var(--bg);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+}
+
+html {
+  margin: 0px;
+  background-color: var(--color-bg);
+  color: #fff;
+
+  font-family: "Hanken Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
