@@ -1,64 +1,55 @@
-interface Tech {
-    icon: { src: string; alt: string }
-    title: string
-}
+import type TecModel from "@/model/Tec"
+import { GetTecs } from "@/scripts/tecs"
+import { useEffect, useState } from "react"
+import Tag from "../Tag"
+import { AnimationTime } from "@/constants/animations"
 
 interface ProjectCardProps {
     image: string
     title: string
     description: string
-    techs?: Tech[]
+    techs?: string[]
     onDetails?: () => void
 }
 
 export default function ProjectCard({ image, title, description, techs = [], onDetails }: ProjectCardProps) {
+    const [tecnologies, setTecs] = useState<TecModel[]>([]);
+
+    useEffect(() => {
+        if (techs) {
+            const tecObjects = GetTecs(techs);
+            console.log(tecObjects);
+            setTecs(tecObjects);
+        }
+    }, [])
+
     return (
-        <div className="flex flex-col w-72 gap-3">
+        <div className="flex flex-col flex-1 justify-between gap-3">
+            <img src={image} alt={title} className="w-full object-cover aspect-video rounded-sm" />
 
-            {/* Imagen */}
-            <img
-                src={image}
-                alt={title}
-                className="w-full h-48 object-cover rounded-sm"
-            />
+            <div className="flex flex-col gap-3">
+                <h3 className="text-2xl font-bold">{title}</h3>
 
-            {/* Título */}
-            <h3 className="text-2xl font-bold text-[--foreground]">{title}</h3>
+                <blockquote className="border-l-2 border-(--secondary) pl-3 text-base text-(--text-gray) leading-relaxed line-clamp-3">
+                    {description}
+                </blockquote>
+            </div>
 
-            {/* Descripción con borde izquierdo */}
-            <blockquote className="border-l-2 border-[--accent] pl-3 text-sm text-[--neutral] leading-relaxed">
-                {description}
-            </blockquote>
-
-            {/* Footer: techs + ver detalles */}
             <div className="flex items-center justify-between gap-2 flex-wrap">
-
-                {/* Tags de tecnologías */}
-                {techs.length > 0 && (
-                    <div className="flex items-center gap-2 flex-wrap">
-                        {techs.map((tech) => (
-                            <span
-                                key={tech.title}
-                                className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-[--neutral]/30 text-xs text-[--neutral]"
-                            >
-                                {tech.icon.src && (
-                                    <img
-                                        src={tech.icon.src}
-                                        alt={tech.icon.alt}
-                                        className="w-3.5 h-3.5 object-contain"
-                                    />
-                                )}
-                                {tech.title}
-                            </span>
+                {tecnologies.length > 0 && (
+                    <ul className="flex items-center gap-2 flex-wrap max-w-3/4">
+                        {tecnologies.map((tech) => (
+                            <li key={tech.name}>
+                                <Tag label={tech.name} icon={{ ...tech.icon, iconRight: true }} />
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                 )}
 
-                {/* Ver detalles */}
                 {onDetails && (
                     <button
                         onClick={onDetails}
-                        className="text-sm text-[--neutral] hover:text-[--foreground] transition-colors whitespace-nowrap ml-auto"
+                        className={`text-sm text-(--text-gray) border-b border-b-white/0 hover:text-white hover:border-b-white whitespace-nowrap ml-auto cursor-pointer ${AnimationTime}`}
                     >
                         Ver Detalles
                     </button>

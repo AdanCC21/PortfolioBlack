@@ -12,11 +12,11 @@ export default function Home({ homeRef, projRef }: HomeProps) {
   return (
     <section ref={homeRef} className="relative flex w-full h-(--homeHeight) items-center page-padding overflow-hidden" >
       <div className="absolute top-8 left-8 opacity-20">
-        <img src={Icons.react} alt="react logo" className="size-20 -rotate-15" />
+        <img src={Icons.react_or} alt="react logo" className="size-20 -rotate-15" />
       </div>
 
       <div className="absolute top-8 right-16 opacity-20">
-        <img src={Icons.vue} alt="Vue logo" className="size-20 rotate-15" />
+        <img src={Icons.vue_or} alt="Vue logo" className="size-20 rotate-15" />
       </div>
 
       <div className="relative flex w-full justify-between items-center gap-12">
@@ -67,7 +67,7 @@ export default function Home({ homeRef, projRef }: HomeProps) {
       </div>
 
       <div className="absolute bottom-15 right-15 opacity-20">
-        <img src={Icons.nestJs} alt="nestjs logo" className="size-20 rotate-15" />
+        <img src={Icons.nestJs_or} alt="nestjs logo" className="size-20 rotate-15" />
       </div>
     </section>
   )

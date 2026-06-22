@@ -1,4 +1,6 @@
 import ProjectCard from "@/components/Cards/ProjectCard"
+import { Projects } from "@/constants/projects"
+import { GetImages } from "@/scripts/images"
 
 interface Prompts {
     projRef: React.RefObject<any>
@@ -12,24 +14,11 @@ export default function Proyects({ projRef }: Prompts) {
                 <span className="text-4xl opacity-10 font-bold">{'{ }'}</span>
             </div>
 
-            <ul className="flex gap-4">
-                <ProjectCard
-                    image="/projects/cibershield.png"
-                    title="Cibershield"
-                    description="Plataforma web educativa enfocada en ciberseguridad que ofrece información sobre amenazas como phishing y malware"
-                    techs={[
-                        { title: "React", icon: { src: "/icons/react.svg", alt: "React" } },
-                        { title: "NestJs", icon: { src: "/icons/nestjs.svg", alt: "NestJs" } },
-                        { title: "Typescript", icon: { src: "/icons/typescript.svg", alt: "Typescript" } },
-                    ]}
-                    onDetails={() => console.log("ver detalles")}
-                />
-
-                <ProjectCard
-                    image="/projects/otro.png"
-                    title="Otro proyecto"
-                    description="Descripción..."
-                />
+            <ul className="grid grid-cols-4 gap-16 py-4">
+                {Projects.map((project) => (
+                    <ProjectCard title={project.title} image={GetImages(project.imagesFolder)[0]} description={project.description} techs={project.techs} onDetails={()=>{}} />
+                ))}
+                
             </ul>
         </section>
     )
