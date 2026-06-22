@@ -1,14 +1,60 @@
-import Header from "./components/Layout/Header"
-import Home from "./pages/Home"
+import { useRef, useState, useEffect } from 'react'
+import Header from './components/Layout/Header'
+import type { Section } from './model/PageSection'
+import Home from './pages/Home'
 
-function App() {
+
+export default function App() {
+  const homeRef = useRef<HTMLDivElement>(null)
+  const expRef = useRef<HTMLDivElement>(null)
+  const projRef = useRef<HTMLDivElement>(null)
+  const achivRef = useRef<HTMLDivElement>(null)
+  const aboutRef = useRef<HTMLDivElement>(null)
+
+  const [activeSection, setActiveSection] = useState<Section>('home')
+
+  useEffect(() => {
+    const sections: { ref: React.RefObject<HTMLDivElement | null>, id: Section }[] = [
+      { ref: homeRef, id: 'home' },
+      { ref: expRef, id: 'exp' },
+      { ref: projRef, id: 'proj' },
+      { ref: achivRef, id: 'achiv' },
+      { ref: aboutRef, id: 'about' },
+    ]
+
+    const observers = sections.map(({ ref, id }) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveSection(id) },
+        { threshold: 0.5 } // 50% de la sección visible para activarse
+      )
+      if (ref.current) observer.observe(ref.current)
+      return observer
+    })
+
+    return () => observers.forEach(o => o.disconnect())
+  }, [])
 
   return (
     <>
-      <Header />
-      <Home />
+      <Header
+        activeSection={activeSection}
+        homeRef={homeRef} expRef={expRef}
+        projRef={projRef} achivRef={achivRef} aboutRef={aboutRef}
+      />
+      <Home homeRef={homeRef} projRef={projRef} />
+      <div ref={projRef} className="w-screen h-screen">
+
+      </div>
+      <div ref={expRef} className="w-screen h-screen">
+
+      </div>
+
+      <div ref={achivRef} className="w-screen h-screen">
+
+      </div>
+      <div ref={aboutRef} className="w-screen h-screen">
+
+      </div>
     </>
   )
 }
-
-export default App

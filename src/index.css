@@ -8,6 +8,10 @@
   --neutral: #1c1c1c;
 
   --text-gray: #fff9;
+
+  --headerHeight: 8vh;
+  --homeHeight: calc(100vh - var(--headerHeight));
+  --pageSpace:5vw
 }
 
 @theme {
@@ -25,4 +29,18 @@ html {
   font-family: "Hanken Grotesk", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+.page-padding {
+  padding-left: var(--pageSpace);
+  padding-right: var(--pageSpace);
+}
+
+.page-margin {
+  margin-left: var(--pageSpace);
+  margin-right: var(--pageSpace);
 }
