@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react'
 import Header from './components/Layout/Header'
 import type { Section } from './model/PageSection'
 import Home from './pages/Home'
+import Proyects from './pages/Proyects'
 
 
 export default function App() {
@@ -42,9 +43,7 @@ export default function App() {
         projRef={projRef} achivRef={achivRef} aboutRef={aboutRef}
       />
       <Home homeRef={homeRef} projRef={projRef} />
-      <div ref={projRef} className="w-screen h-screen">
-
-      </div>
+      <Proyects projRef={projRef} />
       <div ref={expRef} className="w-screen h-screen">
 
       </div>
