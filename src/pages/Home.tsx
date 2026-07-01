@@ -21,12 +21,12 @@ export default function Home({ homeRef, projRef }: HomeProps) {
 
       <div className="relative flex w-full justify-between items-center gap-12">
 
-        <div className="flex flex-col gap-4 max-w-2xl z-10">
+        <div className="flex flex-col xl:gap-4 max-w-2xl z-10">
           <span className="text-sm tracking-widest text-(--text-gray) uppercase">
             Desarrollador Full Stack
           </span>
 
-          <h1 className="text-6xl font-bold leading-tight">
+          <h1 className="text-6xl font-bold 2xl:leading-tight">
             Adan Gonzalez Ceseña
           </h1>
 
@@ -47,13 +47,20 @@ export default function Home({ homeRef, projRef }: HomeProps) {
           </div>
         </div>
 
-        <div className="relative shrink-0 h-120 w-100 object-cover rounded-sm rotate-30 shadow-2xl border-5 border-(--secondary) overflow-hidden">
+        <div className="relative shrink-0 h-110 w-90 object-cover rounded-sm shadow-2xl border-5 border-(--secondary) overflow-hidden z-1">
           <img
             src="/yo.png"
             alt="Adan Gonzalez Ceseña"
-            className="scale-150 -rotate-30"
+            className="scale-130"
           />
         </div>
+        {/* <div className="relative shrink-0 h-110 w-90 object-cover rounded-sm rotate-30 shadow-2xl border-5 border-(--secondary) overflow-hidden md:mr-8">
+          <img
+            src="/yo.png"
+            alt="Adan Gonzalez Ceseña"
+            className="md:ml-2 scale-150 -rotate-30"
+          />
+        </div> */}
 
         <button
           className={`absolute left-0 bottom-0 flex items-center gap-2 w-fit cursor-pointer hover:scale-105 ${AnimationTime} `}
@@ -67,7 +74,7 @@ export default function Home({ homeRef, projRef }: HomeProps) {
       </div>
 
       <div className="absolute bottom-15 right-15 opacity-20">
-        <img src={Icons.nestJs_or} alt="nestjs logo" className="size-20 rotate-15" />
+        <img src={Icons.nestJs_or} alt="nestjs logo" className="size-20 rotate-15 -z-1" />
       </div>
     </section>
   )

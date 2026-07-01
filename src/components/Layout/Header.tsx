@@ -34,7 +34,7 @@ interface HeaderItemPrompts {
 
 function HeaderItem({ label, onClick, active }: HeaderItemPrompts) {
     return (
-        <button onClick={onClick} className={`text-lg ${active ? 'font-bold scale-110' :'text-(--text-gray)' } font-medium cursor-pointer ${!active && 'hover:scale-105'} ${AnimationTime}`}>
+        <button onClick={onClick} className={`text-base ${active ? 'font-bold scale-110' :'text-(--text-gray)' } font-medium cursor-pointer ${!active && 'hover:scale-105'} ${AnimationTime}`}>
             <span>{label}</span>
         </button>
     )

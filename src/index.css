@@ -11,7 +11,7 @@
 
   --headerHeight: 8vh;
   --homeHeight: calc(100vh - var(--headerHeight));
-  --pageSpace:5vw
+  --pageSpace: 5vw
 }
 
 @theme {
@@ -29,10 +29,19 @@ html {
   font-family: "Hanken Grotesk", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  font-size: 16px;
+  
+  scrollbar-width: none;
+  scrollbar-color: var(--tertiary) var(--neutral);
 }
 
-body{
+body {
   overflow-x: hidden;
+}
+
+.scroll-hidden{
+  scrollbar-width: none;
+  scrollbar-color: var(--tertiary) var(--neutral);
 }
 
 .page-padding {

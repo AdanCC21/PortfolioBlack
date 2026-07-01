@@ -24,7 +24,7 @@ export default function ProjectCard({ image, title, description, techs = [], onD
     }, [])
 
     return (
-        <div className="flex flex-col flex-1 justify-between gap-3">
+        <div className="flex flex-col flex-1  gap-3">
             <img src={image} alt={title} className="w-full object-cover aspect-video rounded-sm" />
 
             <div className="flex flex-col gap-3">
@@ -37,7 +37,7 @@ export default function ProjectCard({ image, title, description, techs = [], onD
 
             <div className="flex items-center justify-between gap-2 flex-wrap">
                 {tecnologies.length > 0 && (
-                    <ul className="flex items-center gap-2 flex-wrap max-w-3/4">
+                    <ul className="flex flex-nowrap items-center gap-2 max-w-3/5 scroll-hidden overflow-auto">
                         {tecnologies.map((tech) => (
                             <li key={tech.name}>
                                 <Tag label={tech.name} icon={{ ...tech.icon, iconRight: true }} />

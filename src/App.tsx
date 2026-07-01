@@ -3,6 +3,7 @@ import Header from './components/Layout/Header'
 import type { Section } from './model/PageSection'
 import Home from './pages/Home'
 import Proyects from './pages/Proyects'
+import Achivements from './pages/Achivements'
 
 
 export default function App() {
@@ -48,9 +49,7 @@ export default function App() {
 
       </div>
 
-      <div ref={achivRef} className="w-screen h-screen">
-
-      </div>
+      <Achivements pageRef={achivRef} />
       <div ref={aboutRef} className="w-screen h-screen">
 
       </div>
