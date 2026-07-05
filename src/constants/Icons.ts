@@ -13,6 +13,7 @@ import Gmail from "@/assets/icons/social/gmail.svg"
 
 import Arrow from "@/assets/icons/arrow-down.svg"
 import Menu from "@/assets/icons/menu.svg"
+import Close from "@/assets/icons/close.svg"
 
 export const Icons = {
     react: React,
@@ -26,6 +27,7 @@ export const Icons = {
 
     arrowDown: Arrow,
     menu: Menu,
+    close:Close,
 
     linkedin:Linkedin,
     gmail:Gmail,
