@@ -4,6 +4,7 @@ import type { Section } from './model/PageSection'
 import Home from './pages/Home'
 import Proyects from './pages/Proyects'
 import Achivements from './pages/Achivements'
+import Experience from './pages/Experience'
 
 
 export default function App() {
@@ -45,9 +46,8 @@ export default function App() {
       />
       <Home homeRef={homeRef} projRef={projRef} />
       <Proyects projRef={projRef} />
-      <div ref={expRef} className="w-screen h-screen">
-
-      </div>
+      
+      <Experience pageRef={expRef}/>
 
       <Achivements pageRef={achivRef} />
       <div ref={aboutRef} className="w-screen h-screen">
