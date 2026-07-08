@@ -12,6 +12,7 @@ export default function Achivements({ pageRef }: Prompts) {
     const [currentIndex, setCurrentIndex] = useState(1);
 
     const handleCarrusel = (right: boolean) => {
+        console.log(AchivementsList)
         setCurrentIndex(prev => {
             if (right) {
                 return prev === AchivementsList.length - 1 ? 0 : prev + 1;
@@ -29,17 +30,17 @@ export default function Achivements({ pageRef }: Prompts) {
             </div>
 
             <div className="flex flex-col w-full h-[70vh] items-center">
-                <ul className="relative group flex w-full h-fit overflow-hidden">
+                <ul className="relative group flex w-full h-9/10 overflow-hidden">
                     <button onClick={() => { handleCarrusel(false) }}
                         className={`absolute p-2 left-0 bottom-1/2 translate-y-1/2 z-11 group-hover:bg-black/80 rounded-xl ${AnimationTime} cursor-pointer ml-2`}>
                         <img src={Icons.arrowDown} alt="arrow" className="invert h-4 rotate-180" />
                     </button>
 
-                    <AchivementCard position={'left'} currentItem={AchivementsList[currentIndex === 0 ? AchivementsList.length - 1 : currentIndex - 1]} />
+                    <AchivementCard position={'right'} currentItem={AchivementsList[currentIndex === 0 ? AchivementsList.length - 1 : currentIndex - 1]} />
 
                     <AchivementCard position={'center'} currentItem={AchivementsList[currentIndex]} />
 
-                    <AchivementCard position={'right'} currentItem={AchivementsList[currentIndex === AchivementsList.length - 1 ? 0 : currentIndex + 1]} />
+                    <AchivementCard position={'left'} currentItem={AchivementsList[currentIndex === AchivementsList.length - 1 ? 0 : currentIndex + 1]} />
 
                     <button onClick={() => { handleCarrusel(true) }}
                         className={`absolute p-2 right-0 bottom-1/2 translate-y-1/2 z-11 group-hover:bg-black/80 rounded-xl ${AnimationTime} cursor-pointer mr-2`}>

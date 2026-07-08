@@ -11,7 +11,7 @@
 
   --headerHeight: 8vh;
   --homeHeight: calc(100vh - var(--headerHeight));
-  --pageSpace: 5vw
+  --pageSpace: 10vw
 }
 
 @theme {

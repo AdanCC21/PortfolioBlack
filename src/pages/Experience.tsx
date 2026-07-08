@@ -81,8 +81,8 @@ function ExperienceItem({ item, index }: ExpPrompts) {
                 </div>
             </div>
 
-            <div className="absolute top-0 right-1/2 bg-white w-1 h-full -translate-x-1/3"></div>
-            <div className="absolute top-0 right-1/2  bg-white size-2 rounded-full"></div>
+            <div className="absolute top-0 right-1/2 bg-white w-1 h-full -translate-x-full"></div>
+            <div className="absolute top-0 right-1/2  bg-white size-3  rounded-full"></div>
 
             <div className="group flex flex-1 max-w-1/2 min-h-full gap-4 px-4 py-2 bg-(--neutral) rounded-xl overflow-hidden my-8">
                 <div className="relative w-full max-h-full overflow-hidden rounded-lg">

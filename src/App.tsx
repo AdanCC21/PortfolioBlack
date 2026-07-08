@@ -53,6 +53,10 @@ export default function App() {
       <Achivements pageRef={achivRef} />
 
       <About pageRef={aboutRef} />
+
+      <footer className='h-[8vh]'>
+
+      </footer>
     </>
   )
 }
