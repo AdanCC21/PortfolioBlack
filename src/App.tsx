@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Proyects from './pages/Proyects'
 import Achivements from './pages/Achivements'
 import Experience from './pages/Experience'
+import About from './pages/About'
 
 
 export default function App() {
@@ -46,13 +47,12 @@ export default function App() {
       />
       <Home homeRef={homeRef} projRef={projRef} />
       <Proyects projRef={projRef} />
-      
-      <Experience pageRef={expRef}/>
+
+      <Experience pageRef={expRef} />
 
       <Achivements pageRef={achivRef} />
-      <div ref={aboutRef} className="w-screen h-screen">
 
-      </div>
+      <About pageRef={aboutRef} />
     </>
   )
 }

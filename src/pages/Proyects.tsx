@@ -15,7 +15,7 @@ export default function Proyects({ projRef }: Prompts) {
     const [curProject, setProj] = useState<any>(null);
 
     return (
-        <section ref={projRef} className="flex flex-col w-full page-padding">
+        <section ref={projRef} className="flex flex-col w-full min-h-[70vh] page-padding">
             <div className="flex w-full justify-between pb-4 border-b">
                 <h2 className="text-4xl font-bold">Proyectos</h2>
                 <span className="text-4xl opacity-10 font-bold">{'{ }'}</span>

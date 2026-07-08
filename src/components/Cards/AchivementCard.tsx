@@ -1,13 +1,18 @@
+import type { Achivement } from "@/constants/achivements"
+import { GetImages } from "@/scripts/images"
+
 interface Promtps {
     position: 'left' | 'center' | 'right'
-    currentItem: any
+    currentItem: Achivement
 }
 
 export default function AchivementCard({ position, currentItem }: Promtps) {
+    const images = GetImages(currentItem.folder, 'achivements')
+
     return (
         <li key={currentItem.title} className={`${position != 'center' && 'absolute'} flex flex-col gap-2 w-3/4 h-full ${position === 'left' ? 'left-9/10' : position === 'right' ? 'right-9/10' : 'mx-auto'}`}>
             <div className="w-full h-7/10 overflow-hidden rounded-xl">
-                <img src="/achivements/icpc/0.webp" alt="smm" className="size-full object-cover" />
+                <img src={images[0]} alt="smm" className="size-full object-cover" />
             </div>
             <div className="flex justify-between w-full">
                 <h3 className="text-lg font-semibold">{currentItem.title}</h3>

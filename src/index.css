@@ -30,24 +30,28 @@ html {
   font-optical-sizing: auto;
   font-style: normal;
   font-size: 16px;
-  
+
   scrollbar-width: none;
   scrollbar-color: var(--tertiary) var(--neutral);
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
 }
 
-.scroll-hidden{
+.scroll-hidden {
   scrollbar-width: none;
   scrollbar-color: var(--tertiary) var(--neutral);
 }
 
 .page-padding {
+  padding-top: var(--headerHeight);
   padding-left: var(--pageSpace);
   padding-right: var(--pageSpace);
 }
+
 
 .page-margin {
   margin-left: var(--pageSpace);

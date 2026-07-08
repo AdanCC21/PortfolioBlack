@@ -1,4 +1,7 @@
 import AchivementCard from "@/components/Cards/AchivementCard";
+import { AchivementsList } from "@/constants/achivements";
+import { AnimationTime } from "@/constants/animations";
+import { Icons } from "@/constants/Icons";
 import { useState } from "react";
 
 interface Prompts {
@@ -6,35 +9,17 @@ interface Prompts {
 }
 
 export default function Achivements({ pageRef }: Prompts) {
-    const [achiv, setList] = useState<any[]>([
-        {
-            title: 'TalentLand',
-            description: 'Participación en el evento de tecnología más grande de Latinoamérica, TalentLand, donde se presentaron las últimas tendencias y avances en el mundo digital.',
-            date: '2023-04-15',
-            folder: 'talentland',
-        },
-        {
-            title: 'ICPC',
-            description: 'Participación en el evento de tecnología más grande de Latinoamérica, ICPC, donde se presentaron las últimas tendencias y avances en el mundo digital.',
-            date: '2023-04-15',
-            folder: 'icpc',
-        },
-        {
-            title: 'ICPC',
-            description: 'Participación en el evento de tecnología más grande de Latinoamérica, ICPC, donde se presentaron las últimas tendencias y avances en el mundo digital.',
-            date: '2023-04-15',
-            folder: 'icpc',
-        },
-        {
-            title: 'ICPC',
-            description: 'Participación en el evento de tecnología más grande de Latinoamérica, ICPC, donde se presentaron las últimas tendencias y avances en el mundo digital.',
-            date: '2023-04-15',
-            folder: 'icpc',
-        },
-    ]);
-
     const [currentIndex, setCurrentIndex] = useState(1);
 
+    const handleCarrusel = (right: boolean) => {
+        setCurrentIndex(prev => {
+            if (right) {
+                return prev === AchivementsList.length - 1 ? 0 : prev + 1;
+            } else {
+                return prev === 0 ? AchivementsList.length - 1 : prev - 1;
+            }
+        })
+    }
 
     return (
         <div ref={pageRef} className="flex flex-col w-full gap-4 page-padding">
@@ -43,15 +28,27 @@ export default function Achivements({ pageRef }: Prompts) {
                 <span className="text-4xl opacity-10 font-bold">{'< >'}</span>
             </div>
 
-            <div className="flex flex-col w-full h-[80vh] items-center">
-                <ul className="relative flex w-full h-full overflow-hidden">
-                    <AchivementCard position={'left'} currentItem={achiv[currentIndex === 0 ? achiv.length - 1 : currentIndex - 1]} />
-                    <AchivementCard position={'center'} currentItem={achiv[currentIndex]} />
-                    <AchivementCard position={'right'} currentItem={achiv[currentIndex === achiv.length - 1 ? 0 : currentIndex + 1]} />
+            <div className="flex flex-col w-full h-[70vh] items-center">
+                <ul className="relative group flex w-full h-fit overflow-hidden">
+                    <button onClick={() => { handleCarrusel(false) }}
+                        className={`absolute p-2 left-0 bottom-1/2 translate-y-1/2 z-11 group-hover:bg-black/80 rounded-xl ${AnimationTime} cursor-pointer ml-2`}>
+                        <img src={Icons.arrowDown} alt="arrow" className="invert h-4 rotate-180" />
+                    </button>
+
+                    <AchivementCard position={'left'} currentItem={AchivementsList[currentIndex === 0 ? AchivementsList.length - 1 : currentIndex - 1]} />
+
+                    <AchivementCard position={'center'} currentItem={AchivementsList[currentIndex]} />
+
+                    <AchivementCard position={'right'} currentItem={AchivementsList[currentIndex === AchivementsList.length - 1 ? 0 : currentIndex + 1]} />
+
+                    <button onClick={() => { handleCarrusel(true) }}
+                        className={`absolute p-2 right-0 bottom-1/2 translate-y-1/2 z-11 group-hover:bg-black/80 rounded-xl ${AnimationTime} cursor-pointer mr-2`}>
+                        <img src={Icons.arrowDown} alt="arrow" className="invert h-4" />
+                    </button>
                 </ul>
 
                 <ul className="flex gap-4">
-                    {achiv.map((item) => (
+                    {AchivementsList.map((item) => (
                         <li key={`index-${item.title}`} className="bg-(--primary) size-1 rounded-full cursor-pointer">
                         </li>
                     ))}
