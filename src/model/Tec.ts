@@ -1,6 +1,6 @@
 import type { ImageModel } from "./Image"
 
 export default interface TecModel {
-    name: string
+    label: string
     icon: ImageModel
 }

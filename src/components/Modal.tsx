@@ -11,7 +11,7 @@ interface Prompts {
     isOpen: boolean
     setIsOpen: Dispatch<SetStateAction<boolean>>
 
-    onClose?: () => {}
+    onClose?: () => void
 }
 
 export default function Modal({ children, title, icon, isOpen, setIsOpen, onClose }: Prompts) {

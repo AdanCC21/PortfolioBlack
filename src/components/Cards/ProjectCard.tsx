@@ -1,27 +1,28 @@
-import type TecModel from "@/model/Tec"
-import { GetTecs } from "@/scripts/tecs"
-import { useEffect, useState } from "react"
 import Tag from "../Tag"
 import { AnimationTime } from "@/constants/animations"
+import type { ImageModel } from "@/model/Image"
 
 interface ProjectCardProps {
     image: string
     title: string
     description: string
-    techs?: string[]
+    techs?: {
+        label: string
+        img: ImageModel
+    }[]
     onDetails?: () => void
 }
 
 export default function ProjectCard({ image, title, description, techs = [], onDetails }: ProjectCardProps) {
-    const [tecnologies, setTecs] = useState<TecModel[]>([]);
+    // const [tecnologies, setTecs] = useState<TecModel[]>([]);
 
-    useEffect(() => {
-        if (techs) {
-            const tecObjects = GetTecs(techs);
-            console.log(tecObjects);
-            setTecs(tecObjects);
-        }
-    }, [])
+    // useEffect(() => {
+    //     if (techs) {
+    //         const tecObjects = GetTecs(techs);
+    //         console.log(tecObjects);
+    //         setTecs(tecObjects);
+    //     }
+    // }, [])
 
     return (
         <div className="flex flex-col flex-1  gap-3">
@@ -36,11 +37,11 @@ export default function ProjectCard({ image, title, description, techs = [], onD
             </div>
 
             <div className="flex items-center justify-between gap-2 flex-wrap">
-                {tecnologies.length > 0 && (
+                {techs.length > 0 && (
                     <ul className="flex flex-nowrap items-center gap-2 max-w-3/5 scroll-hidden overflow-auto">
-                        {tecnologies.map((tech) => (
-                            <li key={tech.name}>
-                                <Tag label={tech.name} icon={{ ...tech.icon, iconRight: true }} />
+                        {techs.map((tech) => (
+                            <li key={tech.label}>
+                                <Tag label={tech.label} icon={{ ...tech.img, iconRight: true }} />
                             </li>
                         ))}
                     </ul>

@@ -14,9 +14,8 @@ export default function About({ pageRef }: Prompts) {
             </div>
 
             <div className="flex gap-8 justify-between h-[60vh]">
-                <section className="flex flex-col gap-4 w-3/4 h-full justify-center">
-                    <article className="flex flex-col">
-                        <h3 className="text-4xl font-bold mb-4 tracking-wide">Adan Gonzalez Ceseña</h3>
+                <section className="flex flex-col gap-4 w-3/4 h-full">
+                    <article className="flex flex-col mb-4">
                         <p className="text-xl">
                             Cursé la carrera de Ingeniería en Software y Tecnologías Emergentes. Mi enfoque profesional está orientado al desarrollo web frontend y backend, utilizando herramientas y tecnologías modernas como React, Vue, NestJS, TypeScript, entre otras.
                         </p>
@@ -26,27 +25,30 @@ export default function About({ pageRef }: Prompts) {
                         </p>
                         <br />
                         <p className="text-xl">
-                            Me considero una persona tranquila, responsable y con una gran disposición para aprender nuevas tecnologías. Estoy abierto a explorar oportunidades laborales relacionadas con la programación y el trabajo en equipo. Si necesitas a alguien que te ayude a llevar a cabo tu página, hablemos, siempre estoy abierto a nuevos proyectos y retos.
+                          Si necesitas a alguien que te ayude a llevar a cabo tu página, hablemos, siempre estoy abierto a nuevos proyectos y retos.
                         </p>
                     </article>
 
+                    <div className="w-3/4 mx-auto h-px bg-white/40"></div>
+
+                    <h3 className="text-xl font-medium">Tecnologías que Domino</h3>
                     <ul className="flex gap-2 flex-wrap">
-                        <Tag label="React" icon={{ src: Icons.react, alt: 'NestJs' }} />
-                        <Tag label="React Native" icon={{ src: Icons.react, alt: 'NestJs' }} />
-                        <Tag label="Tailwindcss" icon={{ src: Icons.tailwindcss, alt: 'Tailwindcss' }} />
-                        <Tag label="Vue" icon={{ src: Icons.vue, alt: 'Vue' }} />
-                        <Tag label="NestJs" icon={{ src: Icons.nestJs, alt: 'React' }} />
-                        <Tag label="Express" icon={{ src: Icons.javascript, alt: 'express' }} />
-                        <Tag label="Typescript" icon={{ src: Icons.typescript, alt: 'typecript' }} />
-                        <Tag label="Javascript" icon={{ src: Icons.javascript, alt: 'javascript' }} />
-                        <Tag label="NextJs" icon={{ src: Icons.nextjs, alt: 'Nextjs' }} />
-                        <Tag label="Vite" icon={{ src: Icons.vite, alt: 'vite' }} />
-                        <Tag label="Prisma" icon={{ src: Icons.prisma, alt: 'prisma' }} />
-                        <Tag label="SQL" icon={{ src: Icons.sql, alt: 'SQL' }} />
-                        <Tag label="Spring Boot" icon={{ src: Icons.spring, alt: 'Spring Boot' }} />
-                        <Tag label="Java" icon={{ src: Icons.java, alt: 'Java' }} />
-                        <Tag label="C++" icon={{ src: Icons.cpp, alt: 'C++' }} />
-                        <Tag label="Python" icon={{ src: Icons.python, alt: 'Python' }} />
+                        <Tag labelSize="text-base" label="React" icon={{ src: Icons.react, alt: 'NestJs', className:"size-4" }} />
+                        <Tag labelSize="text-base" label="React Native" icon={{ src: Icons.react, alt: 'NestJs', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="Tailwindcss" icon={{ src: Icons.tailwindcss, alt: 'Tailwindcss', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="Vue" icon={{ src: Icons.vue, alt: 'Vue', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="NestJs" icon={{ src: Icons.nestJs, alt: 'React', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="Express" icon={{ src: Icons.javascript, alt: 'express', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="Typescript" icon={{ src: Icons.typescript, alt: 'typecript', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="Javascript" icon={{ src: Icons.javascript, alt: 'javascript', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="NextJs" icon={{ src: Icons.nextjs, alt: 'Nextjs', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="Vite" icon={{ src: Icons.vite, alt: 'vite', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="Prisma" icon={{ src: Icons.prisma, alt: 'prisma', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="SQL" icon={{ src: Icons.sql, alt: 'SQL', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="Spring Boot" icon={{ src: Icons.spring, alt: 'Spring Boot', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="Java" icon={{ src: Icons.java, alt: 'Java', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="C++" icon={{ src: Icons.cpp, alt: 'C++', className:'size-4' }} />
+                        <Tag labelSize="text-base" label="Python" icon={{ src: Icons.python, alt: 'Python', className:'size-4' }} />
                     </ul>
                 </section>
 
