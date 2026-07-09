@@ -10,7 +10,7 @@ interface HomeProps {
 
 export default function Home({ homeRef, projRef }: HomeProps) {
   return (
-    <section ref={homeRef} className="relative flex w-full h-(--homeHeight) items-center page-padding overflow-hidden" >
+    <section ref={homeRef} className="relative flex w-full h-(--homeHeight) items-center page-padding no-top overflow-hidden" >
       <div className="absolute top-8 left-8 opacity-20">
         <img src={Icons.react_or} alt="react logo" className="size-20 -rotate-15" />
       </div>

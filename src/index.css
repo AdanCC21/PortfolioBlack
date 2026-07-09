@@ -52,6 +52,11 @@ body {
   padding-right: var(--pageSpace);
 }
 
+.page-padding.no-top {
+  padding-top: 0;
+  padding-left: var(--pageSpace);
+  padding-right: var(--pageSpace);
+}
 
 .page-margin {
   margin-left: var(--pageSpace);
