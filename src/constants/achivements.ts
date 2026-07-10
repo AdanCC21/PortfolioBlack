@@ -8,7 +8,7 @@ export interface Achivement {
 export const AchivementsList: Achivement[] = [
     {
         title: "ICPC",
-        description: "AWdaw",
+        description: "El ICPC (International Collegiate Programming Contest) es una competencia universitaria de programación en la que equipos de tres estudiantes resuelven problemas algorítmicos utilizando una sola computadora durante varias horas de competencia. Participé junto con dos compañeras de equipo y actualmente seguimos compitiendo en las distintas fechas del concurso.",
         date: "Ago 2026",
         folder: "icpc"
     },

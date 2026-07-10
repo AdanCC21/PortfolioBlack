@@ -46,6 +46,7 @@ export default function App() {
         projRef={projRef} achivRef={achivRef} aboutRef={aboutRef}
       />
       <Home homeRef={homeRef} projRef={projRef} />
+      
       <Proyects projRef={projRef} />
 
       <Experience pageRef={expRef} />

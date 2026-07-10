@@ -1,8 +1,10 @@
 import ProjectCard from "@/components/Cards/ProjectCard"
+import Carrusel from "@/components/Carrusel"
 import Modal from "@/components/Modal"
 import Tag from "@/components/Tag"
 import { Projects, type Project } from "@/constants/projects"
 import { GetImages } from "@/scripts/images"
+import { AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
 
 interface Prompts {
@@ -13,6 +15,7 @@ export default function Proyects({ projRef }: Prompts) {
     const [viewModal, showModal] = useState<boolean>(false);
     const [curProject, setProj] = useState<Project | null>(null);
     const [projectImages, setImages] = useState<string[]>([])
+    const [indexActive, setIndex] = useState<number>(0);
 
     useEffect(() => {
         if (!curProject) return;
@@ -23,16 +26,17 @@ export default function Proyects({ projRef }: Prompts) {
         } else {
             setImages([]);
         }
+        setIndex(0);
     }, [curProject?.title])
 
     return (
-        <section ref={projRef} className="flex flex-col w-full min-h-[70vh] page-padding">
+        <section ref={projRef} className="flex flex-col w-full min-h-[80vh] page-padding">
             <div className="flex w-full justify-between pb-4 border-b">
                 <h2 className="text-4xl font-bold">Proyectos</h2>
                 <span className="text-4xl opacity-10 font-bold">{'{ }'}</span>
             </div>
 
-            <ul className="grid grid-cols-4 gap-16 py-4">
+            <ul className="grid grid-cols-3 gap-16 py-4">
                 {Projects.map((project: Project) => (
                     <ProjectCard title={project.title} image={GetImages(project.folder)[0]} description={project.description} techs={project.tecs} onDetails={() => { showModal(true); setProj(project); }} />
                 ))}
@@ -43,18 +47,8 @@ export default function Proyects({ projRef }: Prompts) {
                 {curProject ?
                     <>
                         <div className="flex flex-col justify-between">
-                            <section className="relative flex h-[50vh] gap-4 w-full overflow-hidden mb-8">
-                                <img src={projectImages[0]} alt="prueba" className="absolute left-0 top-0 -translate-x-9/10 h-full max-w-4/5  object-cover rounded-lg" />
-
-                                <img src={projectImages[1]} alt="prueba" className="h-full max-w-4/5 object-cover absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg" />
-
-                                <img src={projectImages[2]} alt="prueba" className="absolute right-0 top-0 translate-x-9/10 h-full max-w-4/5 object-cover rounded-lg" />
-                            </section>
-
-                            <div className="flex gap-4 mx-auto py-2">
-                                <div className="bg-white size-2 rounded-full"></div>
-                                <div className="bg-white/40 size-2 rounded-full"></div>
-                                <div className="bg-white/40 size-2 rounded-full"></div>
+                            <div className="relative flex flex-col items-center h-[50vh] gap-4 w-full overflow-hidden mb-8">
+                                <Carrusel images={projectImages} indexActive={indexActive} setIndex={setIndex} />
                             </div>
 
                             <section className="flex gap-4">
@@ -81,7 +75,7 @@ export default function Proyects({ projRef }: Prompts) {
                             <article className="flex flex-col gap-2">
                                 <h3 className="text-xl font-medium">¿Que es {curProject?.title}?</h3>
                                 <p className="text-base ">
-                                    {curProject.description}
+                                    {curProject.whatIs}
                                 </p>
                             </article>
 

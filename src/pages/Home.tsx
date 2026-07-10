@@ -53,21 +53,6 @@ export default function Home({ homeRef, projRef }: HomeProps) {
             className="rounded-full aspect-square object-cover h-130"
           />
 
-        {/* <div className="relative shrink-0 h-110 w-90 object-cover rounded-sm shadow-2xl border-5 border-(--secondary) overflow-hidden z-1">
-          <img
-            src="/yo.png"
-            alt="Adan Gonzalez Ceseña"
-            className="scale-130"
-          />
-        </div> */}
-        {/* <div className="relative shrink-0 h-110 w-90 object-cover rounded-sm rotate-30 shadow-2xl border-5 border-(--secondary) overflow-hidden md:mr-8">
-          <img
-            src="/yo.png"
-            alt="Adan Gonzalez Ceseña"
-            className="md:ml-2 scale-150 -rotate-30"
-          />
-        </div> */}
-
         <button
           className={`absolute left-0 bottom-0 flex items-center gap-2 w-fit cursor-pointer hover:scale-105 ${AnimationTime} `}
           onClick={() => projRef.current?.scrollIntoView({ behavior: "smooth" })}

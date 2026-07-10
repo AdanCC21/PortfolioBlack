@@ -14,16 +14,6 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ image, title, description, techs = [], onDetails }: ProjectCardProps) {
-    // const [tecnologies, setTecs] = useState<TecModel[]>([]);
-
-    // useEffect(() => {
-    //     if (techs) {
-    //         const tecObjects = GetTecs(techs);
-    //         console.log(tecObjects);
-    //         setTecs(tecObjects);
-    //     }
-    // }, [])
-
     return (
         <div className="flex flex-col flex-1  gap-3">
             <img src={image} alt={title} className="w-full object-cover aspect-video rounded-sm" />
@@ -38,7 +28,7 @@ export default function ProjectCard({ image, title, description, techs = [], onD
 
             <div className="flex items-center justify-between gap-2 flex-wrap">
                 {techs.length > 0 && (
-                    <ul className="flex flex-nowrap items-center gap-2 max-w-3/5 scroll-hidden overflow-auto">
+                    <ul className="flex flex-nowrap items-center gap-2 max-w-4/5 scroll-hidden overflow-auto">
                         {techs.map((tech) => (
                             <li key={tech.label}>
                                 <Tag label={tech.label} icon={{ ...tech.img, iconRight: true }} />
