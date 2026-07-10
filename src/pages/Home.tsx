@@ -41,17 +41,17 @@ export default function Home({ homeRef, projRef }: HomeProps) {
           </blockquote>
 
           <div className="flex items-center gap-2 mt-2">
-            <Button label="Linkedin" icon={{ src: Icons.linkedin, alt: "Linkedin", iconRight: true }} onClick={() => { }} btnStyle="outline-secondary" />
-            <Button label="Github" icon={{ src: Icons.github, alt: "Github", iconRight: true }} onClick={() => { }} btnStyle="outline-secondary" />
-            <Button label="Gmail" icon={{ src: Icons.gmail, alt: "Gmail", iconRight: true }} onClick={() => { }} btnStyle="outline-secondary" />
+            <Button label="Linkedin" icon={{ src: Icons.linkedin, alt: "Linkedin", iconRight: true }} onClick={() => { window.open("https://www.linkedin.com/in/adan-gonzalez-ceseña-584411338", "_blank") }} btnStyle="outline-secondary" />
+            <Button label="Github" icon={{ src: Icons.github, alt: "Github", iconRight: true }} onClick={() => { window.open('https://github.com/AdanCC21', '_blank') }} btnStyle="outline-secondary" />
+            <Button label="Gmail" icon={{ src: Icons.gmail, alt: "Gmail", iconRight: true }} onClick={() => { window.open("mailto:andan.devp@gmail.com") }} btnStyle="outline-secondary" />
           </div>
         </div>
 
-          <img
-            src="/yo.png"
-            alt="Adan Gonzalez Ceseña"
-            className="rounded-full aspect-square object-cover h-130"
-          />
+        <img
+          src="/yo.png"
+          alt="Adan Gonzalez Ceseña"
+          className="rounded-full aspect-square object-cover h-130"
+        />
 
         <button
           className={`absolute left-0 bottom-0 flex items-center gap-2 w-fit cursor-pointer hover:scale-105 ${AnimationTime} `}

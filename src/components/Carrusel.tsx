@@ -9,10 +9,10 @@ interface Prompts {
     indexActive: number
     setIndex: React.Dispatch<React.SetStateAction<number>>
     showIndex?: boolean
-    fullView?:boolean
+    fullView?: boolean
 }
 
-export default function Carrusel({ images, indexActive, setIndex, showIndex = true, fullView=false }: Prompts) {
+export default function Carrusel({ images, indexActive, setIndex, showIndex = true, fullView = false }: Prompts) {
 
     const handleCarrusel = (right: boolean) => {
         setIndex(prev => {
@@ -27,10 +27,12 @@ export default function Carrusel({ images, indexActive, setIndex, showIndex = tr
     return (
         <>
             <ul className="relative group flex w-full h-9/10 overflow-hidden">
-                <button onClick={() => { handleCarrusel(false) }}
-                    className={`absolute p-2 left-0 bottom-1/2 translate-y-1/2 z-20 group-hover:bg-black/80 rounded-xl ${AnimationTime} cursor-pointer ml-2`}>
-                    <img src={Icons.arrowDown} alt="arrow" className="invert h-4 rotate-180" />
-                </button>
+                {images.length > 1 &&
+                    <button onClick={() => { handleCarrusel(false) }}
+                        className={`absolute p-2 left-0 bottom-1/2 translate-y-1/2 z-20 group-hover:bg-black/80 rounded-xl ${AnimationTime} cursor-pointer ml-2`}>
+                        <img src={Icons.arrowDown} alt="arrow" className="invert h-4 rotate-180" />
+                    </button>
+                }
 
                 <AnimatePresence>
                     {images.map((item, index) => (
@@ -42,10 +44,12 @@ export default function Carrusel({ images, indexActive, setIndex, showIndex = tr
                     ))}
                 </AnimatePresence>
 
-                <button onClick={() => { handleCarrusel(true) }}
-                    className={`absolute p-2 right-0 bottom-1/2 translate-y-1/2 z-20 group-hover:bg-black/80 rounded-xl ${AnimationTime} cursor-pointer mr-2`}>
-                    <img src={Icons.arrowDown} alt="arrow" className="invert h-4" />
-                </button>
+                {images.length > 1 &&
+                    <button onClick={() => { handleCarrusel(true) }}
+                        className={`absolute p-2 right-0 bottom-1/2 translate-y-1/2 z-20 group-hover:bg-black/80 rounded-xl ${AnimationTime} cursor-pointer mr-2`}>
+                        <img src={Icons.arrowDown} alt="arrow" className="invert h-4" />
+                    </button>
+                }
             </ul>
 
             {showIndex &&

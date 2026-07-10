@@ -1,8 +1,6 @@
 import type { Achivement } from "@/constants/achivements"
 import { GetImages } from "@/scripts/images"
 import { AnimationTime } from "@/constants/animations"
-import { useEffect, useState } from "react"
-import { handleCarrusel } from "@/scripts/carrusel"
 
 interface Promtps {
     diff: number
