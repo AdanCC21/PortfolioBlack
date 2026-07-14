@@ -4,7 +4,6 @@ import Modal from "@/components/Modal"
 import Tag from "@/components/Tag"
 import { Projects, type Project } from "@/constants/projects"
 import { GetImages } from "@/scripts/images"
-import { AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
 
 interface Prompts {
@@ -16,6 +15,7 @@ export default function Proyects({ projRef }: Prompts) {
     const [curProject, setProj] = useState<Project | null>(null);
     const [projectImages, setImages] = useState<string[]>([])
     const [indexActive, setIndex] = useState<number>(0);
+    const [fullScren, setFullScreen] = useState(false);
 
     useEffect(() => {
         if (!curProject) return;
@@ -48,7 +48,7 @@ export default function Proyects({ projRef }: Prompts) {
                     <>
                         <div className="flex flex-col justify-between">
                             <div className="relative flex flex-col items-center h-[50vh] gap-4 w-full overflow-hidden mb-8">
-                                <Carrusel images={projectImages} indexActive={indexActive} setIndex={setIndex} />
+                                <Carrusel images={projectImages} indexActive={indexActive} setIndex={setIndex} fullScreen={fullScren} setFullScreen={setFullScreen} />
                             </div>
 
                             <section className="flex gap-4">

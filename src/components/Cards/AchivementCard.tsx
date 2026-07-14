@@ -18,15 +18,12 @@ export default function AchivementCard({ diff, currentItem, active = false }: Pr
     const absDiff = Math.abs(diff)
     const isCenter = diff === 0
 
-    const opacityClass =
-        absDiff <= 1 ? 'opacity-100'
-            : absDiff === 2 ? 'opacity-0'
-                : 'opacity-0'
+    const opacityClass = isCenter ? 'opacity-100' : 'opacity-10'
 
     return (
         <li
             style={{ left: `${left}%`, zIndex: 10 - absDiff }}
-            className={`absolute flex flex-col gap-2 w-3/4 h-full transition-all duration-500 ease-in-out ${AnimationTime} ${opacityClass} ${isCenter ? '' : 'pointer-events-none'} ${active ? 'z-10' : 'z-20'}`}
+            className={`absolute flex flex-col gap-2 w-3/4 h-full transition-all duration-500 ease-in-out ${AnimationTime} ${opacityClass} ${isCenter ? '' : 'pointer-events-none'} ${active ? 'z-10' : 'z-20 '}`}
         >
             <div className="flex w-full h-7/10 overflow-hidden rounded-xl">
                 <img src={images[0]} alt="logro" className={`w-1/3 hover:w-2/3 object-cover z-11 transition-all ease-in-out duration-250`} />

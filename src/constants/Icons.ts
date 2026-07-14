@@ -25,6 +25,7 @@ import Arrow from "@/assets/icons/arrow-down.svg"
 import Menu from "@/assets/icons/menu.svg"
 import Close from "@/assets/icons/close.svg"
 
+import Document from "@/assets/icons/document.svg"
 
 export const Icons = {
     react: React,
@@ -51,6 +52,7 @@ export const Icons = {
     arrowDown: Arrow,
     menu: Menu,
     close:Close,
+    document:Document,
 
     linkedin:Linkedin,
     gmail:Gmail,

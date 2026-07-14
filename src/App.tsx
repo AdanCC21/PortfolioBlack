@@ -6,6 +6,7 @@ import Proyects from './pages/Proyects'
 import Achivements from './pages/Achivements'
 import Experience from './pages/Experience'
 import About from './pages/About'
+import Footer from './components/Layout/Footer'
 
 
 export default function App() {
@@ -55,9 +56,7 @@ export default function App() {
 
       <About pageRef={aboutRef} />
 
-      <footer className='h-[8vh]'>
-
-      </footer>
+      <Footer/>
     </>
   )
 }

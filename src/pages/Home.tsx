@@ -41,9 +41,11 @@ export default function Home({ homeRef, projRef }: HomeProps) {
           </blockquote>
 
           <div className="flex items-center gap-2 mt-2">
+            <a href="/CV_Adan_Gonzalez.pdf" download="CV_Adan_Gonzalez.pdf">
+              <Button label="CV" icon={{ src: Icons.document, alt: "cv", iconRight: true }} onClick={() => { }} btnStyle="outline-secondary" />
+            </a>
             <Button label="Linkedin" icon={{ src: Icons.linkedin, alt: "Linkedin", iconRight: true }} onClick={() => { window.open("https://www.linkedin.com/in/adan-gonzalez-ceseña-584411338", "_blank") }} btnStyle="outline-secondary" />
             <Button label="Github" icon={{ src: Icons.github, alt: "Github", iconRight: true }} onClick={() => { window.open('https://github.com/AdanCC21', '_blank') }} btnStyle="outline-secondary" />
-            <Button label="Gmail" icon={{ src: Icons.gmail, alt: "Gmail", iconRight: true }} onClick={() => { window.open("mailto:andan.devp@gmail.com") }} btnStyle="outline-secondary" />
           </div>
         </div>
 

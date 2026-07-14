@@ -1,13 +1,6 @@
 import Tag from "@/components/Tag"
-import { AnimationTime } from "@/constants/animations"
 import { Experiences, type Experience } from "@/constants/experience"
-import { Icons } from "@/constants/Icons"
-import { GetImages } from "@/scripts/images"
-import { useState, useCallback, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { slideVariants } from "@/scripts/carrusel"
-import Carrusel from "@/components/Carrusel"
-import { label } from "framer-motion/client"
+
 
 interface Prompts {
     pageRef: React.RefObject<any>
@@ -36,16 +29,14 @@ interface ExpPrompts {
 }
 
 function ExperienceItem({ item, index }: ExpPrompts) {
-    const images = GetImages(item.folder, 'experience');
-    const [currentImage, setCurrentImage] = useState(0);
 
     return (
-        <li className={`relative flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} gap-8 justify-between w-full h-fit`}>
-            <div className="flex flex-col flex-1 max-w-1/2 h-fit gap-4 px-4 py-2 bg-(--neutral) rounded-xl my-8">
-                <span className="text-sm text-(--gray)">{item.place}</span>
-                <div className="flex w-full justify-between">
-                    <h1 className="text-4xl font-bold">{item.title}</h1>
-                    <span className="text-lg">{item.date}</span>
+        <li className={`relative flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} justify-between w-full h-fit`}>
+            <div className={`flex flex-col flex-1 h-fit gap-4 p-4 bg-(--neutral) rounded-xl mb-4`}>
+                <span className="text-xs text-(--gray)">{item.place}</span>
+                <div className="flex w-full items-center justify-between">
+                    <h1 className="text-2xl font-bold">{item.title}</h1>
+                    <span className="text-sm">{item.date}</span>
                 </div>
                 <p className="text-base">
                     {item.description}
@@ -57,11 +48,12 @@ function ExperienceItem({ item, index }: ExpPrompts) {
                 </ul>
             </div>
 
-            <div className="absolute top-0 right-1/2 bg-white w-1 h-full -translate-x-full"></div>
-            <div className="absolute top-0 right-1/2  bg-white size-3  rounded-full"></div>
+            <div className="relative flex flex-col items-center mx-2">
+                <div className="bg-white size-3 rounded-full"></div>
+                <div className="bg-white w-1 h-full"></div>
+            </div>
+            <div className={`flex flex-col flex-1 h-fit gap-4 p-4 rounded-xl mb-4`}>
 
-            <div className="group flex flex-1 max-w-1/2 min-h-full gap-4 px-4 py-2 bg-(--neutral) rounded-xl overflow-hidden my-8">
-                <Carrusel images={images} indexActive={currentImage} setIndex={setCurrentImage} showIndex={false} />
             </div>
         </li>
     )
