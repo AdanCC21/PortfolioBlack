@@ -1,6 +1,7 @@
 import Button from "@/components/Button"
 import { AnimationTime } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
+import { useLanguage } from "@/hooks/useLanguage"
 import { useState, type RefObject } from "react"
 
 interface HomeProps {
@@ -10,6 +11,7 @@ interface HomeProps {
 
 export default function Home({ homeRef, projRef }: HomeProps) {
   const [showDescription, setShowDescription] = useState(false)
+  const { t } = useLanguage()
 
   return (
     <section
@@ -33,52 +35,35 @@ export default function Home({ homeRef, projRef }: HomeProps) {
 
         <div className="order-2 z-10 flex max-w-2xl w-full flex-col items-center text-center lg:order-1 lg:items-start lg:text-left">
           <span className="text-sm uppercase tracking-widest text-(--text-gray)">
-            Desarrollador Full Stack
+            {t.home.role}
           </span>
 
           <h1 className="text-4xl font-bold sm:text-5xl lg:text-6xl 2xl:leading-tight">
-            Adan Gonzalez Ceseña
+            {t.home.name}
           </h1>
 
           <p className="text-lg font-light tracking-wide text-(--text-gray) sm:text-xl">
-            Ing. Software y Tecnologias Emergentes
+            {t.home.title}
           </p>
 
           <blockquote className="hidden md:block border-l-2 border-(--secondary) pl-4 text-sm leading-relaxed my-4">
-            Desarrollador web orientado al Frontend, con capacidad full stack.
-            Me especializo en crear interfaces limpias y responsivas conectadas
-            a servicios robustos en el backend.
+            {t.home.description}
           </blockquote>
-          
-          <div className="md:hidden mt-4 w-full max-w-xl">
-            <button
-              type="button"
-              className="flex w-full cursor-pointer items-start gap-2 rounded-r-md border-l-2 border-(--secondary) pl-4 text-left text-sm leading-relaxed text-(--text-gray) transition hover:text-white"
-              onClick={() => setShowDescription((prev) => !prev)}
-            >
-              <span className="flex-1">
-                Desarrollador web orientado al Frontend, con capacidad full stack.
-              </span>
-              <span className="text-xs uppercase tracking-[0.2em] text-(--secondary)">
-                {showDescription ? "menos" : "más"}
-              </span>
-            </button>
 
-            {showDescription && (
-              <p className="mt-3 border-l-2 border-(--secondary) pl-4 text-sm leading-relaxed text-(--text-gray)">
-                Me especializo en crear interfaces limpias y responsivas conectadas a servicios robustos en el backend.
-              </p>
-            )}
+          <div className="md:hidden mt-4 w-full max-w-xl">
+            <span className="flex w-full border-l-2 border-(--secondary) pl-4 text-left text-sm leading-relaxed text-(--text-gray) ">
+              {t.home.description}
+            </span>
           </div>
 
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
             <a href="/CV_Adan_Gonzalez.pdf" download="CV_Adan_Gonzalez.pdf">
-              <Button label="CV" icon={{ src: Icons.document, alt: "cv", iconRight: true }} onClick={() => { }} btnStyle="outline-secondary" />
+              <Button label={t.home.cv} icon={{ src: Icons.document, alt: "cv", iconRight: true }} onClick={() => { }} btnStyle="outline-secondary" />
             </a>
-            
-            <Button label="Linkedin" icon={{ src: Icons.linkedin, alt: "Linkedin", iconRight: true }} onClick={() => { window.open("https://www.linkedin.com/in/adan-gonzalez-ceseña-584411338", "_blank") }} btnStyle="outline-secondary" />
-            
-            <Button label="Github" icon={{ src: Icons.github, alt: "Github", iconRight: true }} onClick={() => { window.open("https://github.com/AdanCC21", "_blank") }} btnStyle="outline-secondary" />
+
+            <Button label={t.home.linkedin} icon={{ src: Icons.linkedin, alt: "Linkedin", iconRight: true }} onClick={() => { window.open("https://www.linkedin.com/in/adan-gonzalez-ceseña-584411338", "_blank") }} btnStyle="outline-secondary" />
+
+            <Button label={t.home.github} icon={{ src: Icons.github, alt: "Github", iconRight: true }} onClick={() => { window.open("https://github.com/AdanCC21", "_blank") }} btnStyle="outline-secondary" />
           </div>
         </div>
 
@@ -89,19 +74,19 @@ export default function Home({ homeRef, projRef }: HomeProps) {
           <div className="flex flex-col rounded-md bg-(--primary) p-2">
             <img src={Icons.arrowDown} alt="go down" className="size-4 rotate-90" />
           </div>
-          <span className="text-base">Proyectos</span>
+          <span className="text-base">{t.home.projects}</span>
         </button>
       </div>
-      
+
       <button
-          className={`flex lg:hidden absolute bottom-10 right-1/2 translate-x-1/2 w-fit items-center gap-2 cursor-pointer hover:scale-105 ${AnimationTime}`}
-          onClick={() => projRef.current?.scrollIntoView({ behavior: "smooth" })}
-        >
-          <div className="flex flex-col rounded-md bg-(--primary) p-2">
-            <img src={Icons.arrowDown} alt="go down" className="size-4 rotate-90" />
-          </div>
-          <span className="text-base">Proyectos</span>
-        </button>
+        className={`flex lg:hidden absolute bottom-10 right-1/2 translate-x-1/2 w-fit items-center gap-2 cursor-pointer hover:scale-105 ${AnimationTime}`}
+        onClick={() => projRef.current?.scrollIntoView({ behavior: "smooth" })}
+      >
+        <div className="flex flex-col rounded-md bg-(--primary) p-2">
+          <img src={Icons.arrowDown} alt="go down" className="size-4 rotate-90" />
+        </div>
+        <span className="text-base">{t.home.projects}</span>
+      </button>
 
       <div className="absolute bottom-15 right-15 opacity-20 sm:opacity-30">
         <img src={Icons.nestJs_or} alt="nestjs logo" className="size-14 rotate-15 sm:size-20" />

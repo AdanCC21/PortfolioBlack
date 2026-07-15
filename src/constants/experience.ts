@@ -1,3 +1,6 @@
+import type { Language } from "@/hooks/useLanguage"
+import es from "@/locales/es.json"
+import en from "@/locales/en.json"
 import type { ImageModel } from "@/model/Image"
 import { Icons } from "./Icons"
 
@@ -11,6 +14,26 @@ export interface Experience {
         img: ImageModel
     }[]
     folder: string
+}
+
+const experienceTranslations: Record<Language, Array<{
+    title: string
+    description: string
+    place: string
+    date: string
+}>> = {
+    es: es.experience.items as Array<{
+        title: string
+        description: string
+        place: string
+        date: string
+    }>,
+    en: en.experience.items as Array<{
+        title: string
+        description: string
+        place: string
+        date: string
+    }>
 }
 
 export const Experiences: Experience[] = [
@@ -39,3 +62,19 @@ export const Experiences: Experience[] = [
         folder: "caf"
     },
 ]
+
+export function getExperiences(language: Language): Experience[] {
+    const translations = experienceTranslations[language] ?? experienceTranslations.es
+
+    return Experiences.map((experience, index) => {
+        const translation = translations[index] ?? {}
+
+        return {
+            ...experience,
+            title: translation.title ?? experience.title,
+            description: translation.description ?? experience.description,
+            place: translation.place ?? experience.place,
+            date: translation.date ?? experience.date,
+        }
+    })
+}

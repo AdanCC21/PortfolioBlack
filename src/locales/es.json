@@ -1,0 +1,129 @@
+{
+  "header": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "achievements": "Logros",
+    "about": "Sobre Mi"
+  },
+  "home": {
+    "role": "Desarrollador Full Stack",
+    "name": "Adan Gonzalez Ceseña",
+    "title": "Ing. Software y Tecnologias Emergentes",
+    "description": "Desarrollador web orientado al Frontend, con capacidad full stack. Me especializo en crear interfaces limpias y responsivas conectadas a servicios robustos en el backend.",
+    "cv": "CV",
+    "linkedin": "Linkedin",
+    "github": "Github",
+    "projects": "Proyectos",
+    "more": "Más",
+    "less": "Menos"
+  },
+  "about": {
+    "title": "Sobre Mi",
+    "subtitle": "Tecnologías que Domino",
+    "paragraphs": [
+      "Cursé la carrera de Ingeniería en Software y Tecnologías Emergentes. Mi enfoque profesional está orientado al desarrollo web frontend y backend, utilizando herramientas y tecnologías modernas como React, Vue, NestJS, TypeScript, entre otras.",
+      "Disfruto tomar un diseño existente y convertirlo en una interfaz responsive y funcional, cuidando tanto la lógica del frontend como la conexión con el backend: manejo de tokens, consultas SQL, autenticación, etc. También me adapto a proyectos donde necesito proponer el diseño desde cero.",
+      "Si necesitas a alguien que te ayude a llevar a cabo tu página, hablemos, siempre estoy abierto a nuevos proyectos y retos."
+    ]
+  },
+  "experience": {
+    "title": "Experiencia",
+    "items": [
+      {
+        "title": "Ing. Software y Tecnologias Emergentes",
+        "description": "Formación en desarrollo de software full-stack y tecnologías emergentes, con experiencia práctica en proyectos web, hackathons y desarrollo profesional en UABC.",
+        "place": "U.A.B.C. Campus Ensenada",
+        "date": "Ago - 2022 / Jun - 2026"
+      },
+      {
+        "title": "Desarrollador Full Stack",
+        "description": "Participé junto a amigos de la universidad en el hackathon de TalentLand en la Expo Guadalajara, dentro del track de McDonald's. Propusimos una aplicación enfocada en accesibilidad que ayudara a los usuarios a navegar la app mediante un bot y opciones adaptadas a distintas discapacidades. Aunque no llegamos a la final, fuimos parte de los 500 participantes seleccionados entre 1500 solicitantes.",
+        "place": "Departamento de Desarrollo de Software (DDS) - UABC",
+        "date": "Ene - 2025 / Jun - 2026"
+      },
+      {
+        "title": "Desarrollador Frontend",
+        "description": "Participé en el desarrollo frontend de una plataforma web enfocada en apoyar el proceso de desarrollo de habilidades en infantes con transtornos del desarrollo. Traduje diseños de Figma a interfaces funcionales en React con NextJs, manteniendo comunicación constante con la encargada del proyecto y proponiendo mejoras de diseño que fueron mayormente adoptadas. Todo se manejó de manera remota.",
+        "place": "CAF",
+        "date": "Mar - 2025 / Jun - 2026"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "modal": {
+      "title": "Proyecto",
+      "whatIs": "¿Que es",
+      "whatIdo": "¿Cual fue mi trabajo?",
+      "date": "Fecha",
+      "role": "Rol",
+      "location": "Ubicación",
+      "team": "Equipo",
+      "repo": "Repositorio",
+      "page": "Página",
+      "error": "Lo siento",
+      "errorMessage": "Hubo un error al cargar el proyecto"
+    },
+    "items": [
+      {
+        "title": "Cibershield",
+        "description": "Plataforma web educativa enfocada en ciberseguridad que ofrece información sobre amenazas como phishing y malware",
+        "whatIdo": "Llevé a cabo el rediseño completo de esta página. La página ya existía; era un proyecto de mi compañero de equipo, un proyecto viejo con mucho potencial. Sin embargo, mi compañero y yo concluimos que era necesario un rediseño completo debido a las opiniones de algunos usuarios. Así que, mientras él se encargaba de la documentación, yo llevé a cabo todo el rediseño y el código para actualizar la página",
+        "whatIs": "CiberShield es una página web educativa enfocada en ciberseguridad. Ofrecemos información sobre amenazas como phishing y malware, y contamos con un simulador de correos falsos: una sección donde se presentan ejemplos de correos legítimos y casos de phishing, en la que el usuario debe leer cuidadosamente el contenido y deducir si el correo es legítimo o un caso de phishing",
+        "rol": "FullStack",
+        "location": "Ensenada, B.C. México",
+        "date": "feb - 2026 / jun 2026",
+        "team": ["Antonio Ramos", "Adan Gonzalez Ceseña"]
+      },
+      {
+        "title": "WolfForest",
+        "description": "Es un sitio web donde puedes mejorar tus personajes ficticios para enfrentarlos en una batalla campal.",
+        "whatIdo": "Llevé a cabo todo el proceso de desarrollo de esta página: diseño, código, mecánicas, etc. Es un rediseño y refactorización de uno de los primeros proyectos que hice en mi carrera",
+        "whatIs": "Es un sitio web donde puedes mejorar tus personajes ficticios para enfrentarlos en una batalla campal. Conforme vas jugando, se producen eventos especiales como muertes, asesinatos, alianzas temporales y recolección de objetos, creando una narrativa dinámica y aleatoria.",
+        "rol": "FullStack",
+        "location": "Ensenada, B.C. México",
+        "date": "apr 2025"
+      },
+      {
+        "title": "Gestor de pruebas",
+        "description": "Este proyecto actualmente es clasificado, pero fue solicitado por el Departamento de Desarrollo de Software de la UABC.",
+        "whatIdo": "Llevé a cabo todo el desarrollo del proyecto: diseño, base de datos, código frontend/backend, y apoyé con el deploy. Sin embargo, no estuve solo todo el tiempo; al inicio éramos solo yo y el cliente, y después de 3 meses se integró mi compañero de equipo, quien nos apoyó en la documentación y, en los últimos meses, en el área de frontend",
+        "whatIs": "Este proyecto actualmente es clasificado, pero fue solicitado por el Departamento de Desarrollo de Software de la UABC. Si necesitas más información, escríbeme y con gusto lo platicamos",
+        "rol": "FullStack",
+        "location": "Ensenada, B.C. México",
+        "date": "oct - 2025 / may 2026",
+        "team": ["Abraham Gonzalez Páez", "Adan Gonzalez"]
+      },
+      {
+        "title": "ActOne",
+        "description": "Una red social diseñada para compartir historias, donde los usuarios pueden compartir sus anécdotas en un formato dividido por actos.",
+        "whatIdo": "Llevé a cabo todo lo que conlleva este proyecto. Fue un proyecto escolar, pero me gustó mucho el resultado final; de momento estoy en proceso de refactorizar el código y el diseño",
+        "whatIs": "Una red social diseñada para compartir historias, donde los usuarios pueden compartir sus anécdotas en un formato dividido por actos. La plataforma también incluye un modo de concentración para creadores de contenido, que permite leer las historias párrafo por párrafo, eliminando distracciones y ofreciendo una experiencia más inmersiva.",
+        "rol": "FullStack",
+        "location": "Ensenada, B.C. México",
+        "date": "jun / 2025"
+      }
+    ]
+  },
+  "achievements": {
+    "title": "Logros",
+    "items": [
+      {
+        "title": "ICPC",
+        "description": "El ICPC (International Collegiate Programming Contest) es una competencia universitaria de programación en la que equipos de tres estudiantes resuelven problemas algorítmicos utilizando una sola computadora durante varias horas de competencia. Participé junto con dos compañeras de equipo y actualmente seguimos compitiendo en las distintas fechas del concurso.",
+        "date": "Ago 2026"
+      },
+      {
+        "title": "TalentLand",
+        "description": "En 2025 participé junto a amigos de la universidad en el hackathon de TalentLand en la Expo Guadalajara, dentro del track de McDonald's. Propusimos una aplicación enfocada en accesibilidad que ayudara a los usuarios a navegar la app mediante un bot y opciones adaptadas a distintas discapacidades. Aunque no llegamos a la final, fuimos parte de los 500 participantes seleccionados entre 1500 solicitantes.",
+        "date": "Abr 2025"
+      },
+      {
+        "title": "Nasa Space APP Challenge",
+        "description": "El 4 y 5 de octubre de 2025 participé en el NASA Space Apps Challenge junto a mi equipo. Desarrollamos una idea de aplicación del clima que ofrece recomendaciones basadas en los planes del usuario y las condiciones meteorológicas. Aunque no obtuvimos un lugar ganador, la experiencia fue muy enriquecedora.",
+        "date": "Oct 2025"
+      }
+    ]
+  }
+}

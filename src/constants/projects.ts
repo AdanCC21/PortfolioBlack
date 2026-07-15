@@ -1,3 +1,6 @@
+import type { Language } from "@/hooks/useLanguage"
+import es from "@/locales/es.json"
+import en from "@/locales/en.json"
 import type { ImageModel } from "@/model/Image"
 import { Icons } from "./Icons"
 
@@ -20,6 +23,38 @@ export interface Project {
     repo?: string
     page?: string
 }
+const projectTranslations: Record<Language, Array<{
+    title: string
+    description: string
+    whatIdo: string
+    whatIs: string
+    location: string
+    rol: string
+    date: string
+    team?: string[]
+}>> = {
+    es: es.projects.items as Array<{
+        title: string
+        description: string
+        whatIdo: string
+        whatIs: string
+        location: string
+        rol: string
+        date: string
+        team?: string[]
+    }>,
+    en: en.projects.items as Array<{
+        title: string
+        description: string
+        whatIdo: string
+        whatIs: string
+        location: string
+        rol: string
+        date: string
+        team?: string[]
+    }>
+}
+
 export const Projects: Project[] = [
     {
         title: "Cibershield",
@@ -78,3 +113,23 @@ export const Projects: Project[] = [
         tecs: [{ label: "React", img: { src: Icons.react, alt: "React" } }, { label: "NestJs", img: { src: Icons.nestJs, alt: "NestJs" } }, { label: "TypeScript", img: { src: Icons.typescript, alt: "TypeScript" } }, { label: "Prisma", img: { src: Icons.prisma, alt: "Prisma" } }]
     },
 ]
+
+export function getProjects(language: Language): Project[] {
+    const translations = projectTranslations[language] ?? projectTranslations.es
+
+    return Projects.map((project, index) => {
+        const translation = translations[index] ?? {}
+
+        return {
+            ...project,
+            title: translation.title ?? project.title,
+            description: translation.description ?? project.description,
+            whatIdo: translation.whatIdo ?? project.whatIdo,
+            whatIs: translation.whatIs ?? project.whatIs,
+            location: translation.location ?? project.location,
+            rol: translation.rol ?? project.rol,
+            date: translation.date ?? project.date,
+            team: translation.team ?? project.team,
+        }
+    })
+}

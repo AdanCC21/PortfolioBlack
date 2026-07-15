@@ -1,6 +1,7 @@
 import Tag from "@/components/Tag"
 import { Icons } from "@/constants/Icons"
-import { Experiences, type Experience } from "@/constants/experience"
+import { getExperiences, type Experience } from "@/constants/experience"
+import { useLanguage } from "@/hooks/useLanguage"
 
 
 interface Prompts {
@@ -8,6 +9,9 @@ interface Prompts {
 }
 
 export default function Experience({ pageRef }: Prompts) {
+    const { language, t } = useLanguage()
+    const experiences = getExperiences(language)
+
     const backgroundIcons = [
         { src: Icons.prisma, alt: "Prisma", className: "size-10 -rotate-12 sm:size-14", position: "right-[8%] top-[20%]" },
         { src: Icons.javascript, alt: "javascript", className: "size-12 rotate-6 sm:size-16", position: "left-[20%] bottom-[18%]" },
@@ -25,12 +29,12 @@ export default function Experience({ pageRef }: Prompts) {
             </div>
 
             <div className="relative z-10 flex w-full justify-between pb-4 border-b">
-                <h2 className="text-4xl font-bold">Experiencia</h2>
+                <h2 className="text-4xl font-bold">{t.experience.title}</h2>
                 <span className="text-4xl opacity-10 font-bold">{'< >'}</span>
             </div>
 
             <ul className="relative z-10 flex flex-col w-full mb-8">
-                {Experiences.map((exp, index) => (
+                {experiences.map((exp, index) => (
                     <ExperienceItem key={exp.title} item={exp} index={index} />
                 ))}
             </ul>
@@ -44,7 +48,6 @@ interface ExpPrompts {
 }
 
 function ExperienceItem({ item, index }: ExpPrompts) {
-
     return (
         <li className={`flex flex-row-reverse ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} md:justify-between w-full `}>
             <div className={`flex flex-col flex-1 gap-4 p-4 bg-(--neutral) rounded-xl mb-4`}>

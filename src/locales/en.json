@@ -1,0 +1,129 @@
+{
+  "header": {
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "achievements": "Achievements",
+    "about": "About Me"
+  },
+  "home": {
+    "role": "Full Stack Developer",
+    "name": "Adan Gonzalez Ceseña",
+    "title": "Software Engineering and Emerging Technologies",
+    "description": "Web developer focused on the Frontend, with full stack capabilities. I specialize in creating clean and responsive interfaces connected to robust back-end services.",
+    "cv": "CV",
+    "linkedin": "Linkedin",
+    "github": "Github",
+    "projects": "Projects",
+    "more": "More",
+    "less": "Less"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Technologies I Master",
+    "paragraphs": [
+      "I studied Software Engineering and Emerging Technologies. My professional focus is on frontend and backend web development, using modern tools and technologies such as React, Vue, NestJS, TypeScript, among others.",
+      "I enjoy taking an existing design and turning it into a responsive and functional interface, taking care of both the frontend logic and the connection to the backend: token handling, SQL queries, authentication, etc. I also adapt to projects where I need to propose the design from scratch.",
+      "If you need someone to help you carry out your website, let's talk, I am always open to new projects and challenges."
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "items": [
+      {
+        "title": "Software Engineering and Emerging Technologies",
+        "description": "Training in full-stack software development and emerging technologies, with hands-on experience in web projects, hackathons, and professional development at UABC.",
+        "place": "U.A.B.C. Ensenada Campus",
+        "date": "Aug - 2022 / Jun - 2026"
+      },
+      {
+        "title": "Full Stack Developer",
+        "description": "I participated alongside university friends in the TalentLand hackathon at Expo Guadalajara, within the McDonald's track. We proposed an accessibility-focused application that would help users navigate the app through a bot and options adapted to different disabilities. Although we did not reach the finals, we were part of the 500 selected participants out of 1500 applicants.",
+        "place": "Department of Software Development (DDS) - UABC",
+        "date": "Jan - 2025 / Jun - 2026"
+      },
+      {
+        "title": "Frontend Developer",
+        "description": "I participated in the frontend development of a web platform focused on supporting the development of skills in infants with developmental disorders. I translated Figma designs into functional interfaces in React with NextJs, maintaining constant communication with the project manager and proposing design improvements that were largely adopted. Everything was handled remotely.",
+        "place": "CAF",
+        "date": "Mar - 2025 / Jun - 2026"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "modal": {
+      "title": "Project",
+      "whatIs": "What is",
+      "whatIdo": "What did I do?",
+      "date": "Date",
+      "role": "Role",
+      "location": "Location",
+      "team": "Team",
+      "repo": "Repository",
+      "page": "Page",
+      "error": "Sorry",
+      "errorMessage": "There was an error loading the project"
+    },
+    "items": [
+      {
+        "title": "Cibershield",
+        "description": "An educational web platform focused on cybersecurity that offers information about threats such as phishing and malware",
+        "whatIdo": "I carried out the complete redesign of this page. The page already existed; it was a project of my teammate, an old project with a lot of potential. However, my teammate and I concluded that a complete redesign was necessary due to feedback from some users. So while he handled the documentation, I carried out the full redesign and code to update the page",
+        "whatIs": "CiberShield is an educational website focused on cybersecurity. We offer information about threats such as phishing and malware, and we have a fake email simulator: a section where examples of legitimate emails and phishing cases are presented, in which the user must read the content carefully and determine whether the email is legitimate or a phishing case",
+        "rol": "FullStack",
+        "location": "Ensenada, B.C. Mexico",
+        "date": "feb - 2026 / jun 2026",
+        "team": ["Antonio Ramos", "Adan Gonzalez Ceseña"]
+      },
+      {
+        "title": "WolfForest",
+        "description": "A website where you can improve your fictional characters to face them in a battle royale.",
+        "whatIdo": "I carried out the full development process of this page: design, code, mechanics, etc. It is a redesign and refactoring of one of the first projects I made in my career",
+        "whatIs": "It is a website where you can improve your fictional characters to face them in a battle royale. As you play, special events such as deaths, killings, temporary alliances, and object collection occur, creating a dynamic and random narrative.",
+        "rol": "FullStack",
+        "location": "Ensenada, B.C. Mexico",
+        "date": "apr 2025"
+      },
+      {
+        "title": "Test Manager",
+        "description": "This project is currently classified, but it was requested by the UABC Software Development Department.",
+        "whatIdo": "I carried out the full development of the project: design, database, frontend/backend code, and supported deployment. However, I was not alone the entire time; at the beginning it was just me and the client, and after 3 months my teammate joined us and helped with documentation and, in the last months, with the frontend area",
+        "whatIs": "This project is currently classified, but it was requested by the UABC Software Development Department. If you need more information, write to me and I will gladly talk about it",
+        "rol": "FullStack",
+        "location": "Ensenada, B.C. Mexico",
+        "date": "oct - 2025 / may 2026",
+        "team": ["Abraham Gonzalez Páez", "Adan Gonzalez"]
+      },
+      {
+        "title": "ActOne",
+        "description": "A social network designed to share stories, where users can share their anecdotes in a format divided into acts.",
+        "whatIdo": "I carried out everything involved in this project. It was a school project, but I really liked the final result; for now I am in the process of refactoring the code and the design",
+        "whatIs": "A social network designed to share stories, where users can share their anecdotes in a format divided into acts. The platform also includes a concentration mode for content creators, allowing them to read the stories paragraph by paragraph, eliminating distractions and offering a more immersive experience.",
+        "rol": "FullStack",
+        "location": "Ensenada, B.C. Mexico",
+        "date": "jun / 2025"
+      }
+    ]
+  },
+  "achievements": {
+    "title": "Achievements",
+    "items": [
+      {
+        "title": "ICPC",
+        "description": "The ICPC (International Collegiate Programming Contest) is a university programming competition in which teams of three students solve algorithmic problems using a single computer for several hours. I participated alongside two teammates and we continue competing in different contest dates.",
+        "date": "Aug 2026"
+      },
+      {
+        "title": "TalentLand",
+        "description": "In 2025 I participated with university friends in the TalentLand hackathon at Expo Guadalajara, within the McDonald's track. We proposed an accessibility-focused application that would help users navigate the app through a bot and options adapted to different disabilities. Although we did not reach the finals, we were part of the 500 selected participants out of 1500 applicants.",
+        "date": "Apr 2025"
+      },
+      {
+        "title": "NASA Space Apps Challenge",
+        "description": "On October 4 and 5, 2025, I participated in the NASA Space Apps Challenge with my team. We developed a weather application idea that offers recommendations based on the user's plans and weather conditions. Although we did not win a place, the experience was very enriching.",
+        "date": "Oct 2025"
+      }
+    ]
+  }
+}

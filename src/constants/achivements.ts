@@ -1,8 +1,29 @@
+import type { Language } from "@/hooks/useLanguage"
+import es from "@/locales/es.json"
+import en from "@/locales/en.json"
+
 export interface Achivement {
     title: string
     description: string
     date: string
     folder: string
+}
+
+const achievementTranslations: Record<Language, Array<{
+    title: string
+    description: string
+    date: string
+}>> = {
+    es: es.achievements.items as Array<{
+        title: string
+        description: string
+        date: string
+    }>,
+    en: en.achievements.items as Array<{
+        title: string
+        description: string
+        date: string
+    }>
 }
 
 export const AchivementsList: Achivement[] = [
@@ -25,3 +46,18 @@ export const AchivementsList: Achivement[] = [
         folder: "nasa"
     },
 ]
+
+export function getAchivements(language: Language): Achivement[] {
+    const translations = achievementTranslations[language] ?? achievementTranslations.es
+
+    return AchivementsList.map((achievement, index) => {
+        const translation = translations[index] ?? {}
+
+        return {
+            ...achievement,
+            title: translation.title ?? achievement.title,
+            description: translation.description ?? achievement.description,
+            date: translation.date ?? achievement.date,
+        }
+    })
+}

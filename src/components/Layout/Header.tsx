@@ -1,9 +1,11 @@
 import { AnimationTime, fadeInOut } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
+import { useLanguage } from "@/hooks/useLanguage"
 import type { Section } from "@/model/PageSection"
 import { ScrollTo } from "@/scripts/scroll"
 import { AnimatePresence, motion } from "framer-motion"
 import { useEffect, useState } from "react"
+import Button from "../Button"
 
 interface Prompts {
     activeSection: Section
@@ -16,6 +18,7 @@ interface Prompts {
 
 export default function Header({ activeSection, homeRef, expRef, projRef, achivRef, aboutRef }: Prompts) {
     const [viewMenu, showMenu] = useState(false);
+    const { language, setLanguage, t } = useLanguage()
 
     useEffect(() => {
         viewMenu ?
@@ -29,11 +32,11 @@ export default function Header({ activeSection, homeRef, expRef, projRef, achivR
 
     const items = () => (
         <>
-            <HeaderItem label="Inicio" onClick={() => {  ScrollTo(homeRef); showMenu(false) }} active={activeSection === 'home'} />
-            <HeaderItem label="Proyectos" onClick={() => {  ScrollTo(projRef); showMenu(false) }} active={activeSection === 'proj'} />
-            <HeaderItem label="Experiencia" onClick={() => { ScrollTo(expRef); showMenu(false) }} active={activeSection === 'exp'} />
-            <HeaderItem label="Logros" onClick={() => { ScrollTo(achivRef); showMenu(false) }} active={activeSection === 'achiv'} />
-            <HeaderItem label="Sobre Mi" onClick={() => { ScrollTo(aboutRef); showMenu(false) }} active={activeSection === 'about'} />
+            <HeaderItem label={t.header.home} onClick={() => {  ScrollTo(homeRef); showMenu(false) }} active={activeSection === 'home'} />
+            <HeaderItem label={t.header.projects} onClick={() => {  ScrollTo(projRef); showMenu(false) }} active={activeSection === 'proj'} />
+            <HeaderItem label={t.header.experience} onClick={() => { ScrollTo(expRef); showMenu(false) }} active={activeSection === 'exp'} />
+            <HeaderItem label={t.header.achievements} onClick={() => { ScrollTo(achivRef); showMenu(false) }} active={activeSection === 'achiv'} />
+            <HeaderItem label={t.header.about} onClick={() => { ScrollTo(aboutRef); showMenu(false) }} active={activeSection === 'about'} />
         </>
     )
 
@@ -53,18 +56,21 @@ export default function Header({ activeSection, homeRef, expRef, projRef, achivR
                             initial="initial"
                             animate="animate"
                             exit="exit"
-                            className="absolute top-1/2 right-0 translate-x-full flex flex-col gap-2 items-start bg-(--neutral) h-fit w-60 p-4 rounded-tr-xl rounded-b-xl"
+                            className="absolute top-1/2 right-0 translate-x-full flex flex-col gap-2 items-start bg-(--neutral) h-fit w-[80vw] p-4 rounded-tr-xl rounded-b-xl"
                             onClick={(e) => e.stopPropagation()}
                         >
                             {items()}
+                            
                         </motion.div>
                     }
                 </AnimatePresence>
             </div>
 
-            <nav className="hidden md:flex w-fit gap-4">
+            <nav className="hidden md:flex w-fit items-center gap-4">
                 {items()}
             </nav>
+
+            <Button onClick={() => setLanguage(language === 'es' ? 'en' : 'es')} label={language === 'es' ? 'EN' : 'ES'} btnClass="absolute right-4" btnStyle="outline-neutral"/>
         </header>
     )
 }

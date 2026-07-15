@@ -1,11 +1,14 @@
 import Tag from "@/components/Tag"
 import { Icons } from "@/constants/Icons"
+import { useLanguage } from "@/hooks/useLanguage"
 
 interface Prompts {
     pageRef: React.RefObject<any>
 }
 
 export default function About({ pageRef }: Prompts) {
+    const { t } = useLanguage()
+
     const backgroundIcons = [
         { src: Icons.typescript, alt: "Typescript", className: "size-8 rotate-12 sm:size-10", position: "left-[6%] top-[12%]" },
         { src: Icons.cpp, alt: "c++", className: "size-10 rotate-[-10deg] sm:size-14", position: "right-[6%] bottom-[15%]" },
@@ -22,7 +25,7 @@ export default function About({ pageRef }: Prompts) {
             </div>
 
             <div className="relative z-10 flex w-full justify-between pb-4 border-b">
-                <h2 className="text-4xl font-bold">Sobre Mi</h2>
+                <h2 className="text-4xl font-bold">{t.about.title}</h2>
                 <span className="text-4xl opacity-10 font-bold">{'o.o'}</span>
             </div>
 
@@ -34,21 +37,21 @@ export default function About({ pageRef }: Prompts) {
                 <section className="flex flex-col gap-4 size-full order-2 md:order-1 md:w-3/4">
                     <article className="flex flex-col mb-4 text-base md:text-lg">
                         <p>
-                            Cursé la carrera de Ingeniería en Software y Tecnologías Emergentes. Mi enfoque profesional está orientado al desarrollo web frontend y backend, utilizando herramientas y tecnologías modernas como React, Vue, NestJS, TypeScript, entre otras.
+                            {t.about.paragraphs[0]}
                         </p>
                         <br />
                         <p>
-                            Disfruto tomar un diseño existente y convertirlo en una interfaz responsive y funcional, cuidando tanto la lógica del frontend como la conexión con el backend: manejo de tokens, consultas SQL, autenticación, etc. También me adapto a proyectos donde necesito proponer el diseño desde cero.
+                            {t.about.paragraphs[1]}
                         </p>
                         <br />
                         <p>
-                          Si necesitas a alguien que te ayude a llevar a cabo tu página, hablemos, siempre estoy abierto a nuevos proyectos y retos.
+                          {t.about.paragraphs[2]}
                         </p>
                     </article>
 
                     <div className="w-3/4 mx-auto h-px bg-white/40"></div>
 
-                    <h3 className="text-lg font-medium">Tecnologías que Domino</h3>
+                    <h3 className="text-lg font-medium">{t.about.subtitle}</h3>
                     <ul className="flex gap-2 flex-wrap">
                         <Tag labelSize="text-sm" label="React" icon={{ src: Icons.react, alt: 'NestJs', className:"size-3" }} />
                         <Tag labelSize="text-sm" label="React Native" icon={{ src: Icons.react, alt: 'NestJs', className:'size-3' }} />
