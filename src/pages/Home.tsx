@@ -13,8 +13,7 @@ export default function Home({ homeRef, projRef }: HomeProps) {
   const { t } = useLanguage()
 
   return (
-    <section
-      ref={homeRef}
+    <section ref={homeRef}
       className="relative flex min-h-(--homeHeight) w-full items-center overflow-hidden page-padding py-12 no-top sm:py-16 lg:py-0"
     >
       <div className="absolute top-8 left-8 opacity-20 sm:opacity-30">
