@@ -38,7 +38,7 @@ export default function Modal({ children, title, icon, isOpen, setIsOpen, onClos
                     <motion.div variants={showScale} initial="initial" animate="animate" exit="exit" transition={{ type: "spring", stiffness: 200, damping: 25, duration: .3, ease: easeInOut }} className="flex flex-col gap-4 w-5/6 md:w-4/6 h-full md:h-9/10 bg-(--neutral) rounded-xl p-4 z-101" onClick={(e) => { e.stopPropagation(); }}>
                         <header className="flex gap-4 items-center h-fit">
                             {icon.src.trim() &&
-                                <img src={icon.src} alt={icon.alt} className={`${icon.className} h-7 w-fit`} />
+                                <img src={icon.src} alt={icon.alt} className={`${icon.className} size-7 w-fit`} />
                             }
                             <h2 className="text-2xl font-medium">{title}</h2>
 
