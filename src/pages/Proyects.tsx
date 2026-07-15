@@ -36,7 +36,7 @@ export default function Proyects({ projRef }: Prompts) {
                 <span className="text-4xl opacity-10 font-bold">{'{ }'}</span>
             </div>
 
-            <ul className="grid grid-cols-3 gap-16 py-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 py-4">
                 {Projects.map((project: Project) => (
                     <ProjectCard title={project.title} image={GetImages(project.folder)[0]} description={project.description} techs={project.tecs} onDetails={() => { showModal(true); setProj(project); }} />
                 ))}
@@ -46,42 +46,42 @@ export default function Proyects({ projRef }: Prompts) {
             <Modal title={curProject?.title ?? "Proyecto"} icon={{ src: `/projects/${curProject?.folder}/z_logo.webp`, alt: "logo" }} isOpen={viewModal} setIsOpen={showModal} onClose={() => { setProj(null); setImages([]); }}>
                 {curProject ?
                     <>
-                        <div className="flex flex-col justify-between">
-                            <div className="relative flex flex-col items-center h-[50vh] gap-4 w-full overflow-hidden mb-8">
+                        <div className="flex flex-col justify-between order-1">
+                            <div className="relative flex flex-col items-center h-[20vh] md:h-[30vh] lg:h-[50vh] gap-4 w-full overflow-hidden mb-8">
                                 <Carrusel images={projectImages} indexActive={indexActive} setIndex={setIndex} fullScreen={fullScren} setFullScreen={setFullScreen} />
                             </div>
-
-                            <section className="flex gap-4">
-                                <ProjectData title="Fecha" data={curProject.date} />
-                                <ProjectData title="Rol" data={curProject.rol} />
-                                <ProjectData title="Ubicacion" data={curProject.location} />
-                                {(curProject.team && curProject.team.length > 0) &&
-                                    <ProjectData title="Equipo" data={curProject.team} />
-                                }
-
-                                <ul className="flex flex-nowrap items-center ml-auto gap-2 max-w-3/5 scroll-hidden overflow-auto">
-                                    {curProject.tecs.map((tec) => (
-                                        <li key={tec.label}>
-                                            <Tag label={tec.label} icon={tec.img} />
-                                        </li>
-                                    ))}
-                                </ul>
-                            </section>
                         </div>
+                        
+                        <section className="flex flex-col md:flex-row gap-4 order-4 md:order-2">
+                            <ProjectData title="Fecha" data={curProject.date} />
+                            <ProjectData title="Rol" data={curProject.rol} />
+                            <ProjectData title="Ubicacion" data={curProject.location} />
+                            {(curProject.team && curProject.team.length > 0) &&
+                                <ProjectData title="Equipo" data={curProject.team} />
+                            }
 
-                        <hr className="bg-whtie my-8 w-4/5 mx-auto" />
+                            <ul className="flex flex-nowrap items-center ml-auto gap-2 max-w-3/5 scroll-hidden overflow-auto">
+                                {curProject.tecs.map((tec) => (
+                                    <li key={tec.label}>
+                                        <Tag label={tec.label} icon={tec.img} />
+                                    </li>
+                                ))}
+                            </ul>
+                        </section>
 
-                        <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <hr className="bg-whtie my-8 w-4/5 mx-auto order-3 md:order-3" />
+
+                        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 order-2 md:order-4">
                             <article className="flex flex-col gap-2">
                                 <h3 className="text-xl font-medium">¿Que es {curProject?.title}?</h3>
-                                <p className="text-base ">
+                                <p className="text-sm md:text-base">
                                     {curProject.whatIs}
                                 </p>
                             </article>
 
                             <article className="flex flex-col gap-2">
                                 <h3 className="text-xl font-medium">¿Cual fue mi trabajo?</h3>
-                                <p className="text-base ">
+                                <p className="text-sm md:text-base">
                                     {curProject.whatIdo}
                                 </p>
                             </article>

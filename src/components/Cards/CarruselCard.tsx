@@ -30,7 +30,7 @@ export default function CarruselCard({ diff, image, hiddeOther, isFull, setFull 
             style={{ zIndex: 10 - absDiff }}
             className={`absolute flex flex-col gap-2 w-3/4 h-full ${isCenter ? '' : 'pointer-events-none'}`}
         >
-            <div className="w-full h-full overflow-hidden rounded-xl">
+            <div className="flex w-full h-full overflow-hidden rounded-xl">
                 <img src={image} alt="smm" className="max-w-full max-h-full m-auto object-contain rounded-xl" onClick={() => { !isFull && setFull?.(prev => !prev) }} />
             </div>
         </motion.li>

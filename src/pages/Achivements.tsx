@@ -19,7 +19,7 @@ export default function Achivements({ pageRef }: Prompts) {
                 <span className="text-4xl opacity-10 font-bold">{'< >'}</span>
             </div>
 
-            <div className="flex flex-col w-full h-[70vh] items-center">
+            <div className="flex flex-col w-full gap-4 md:gap-0 h-[85vh] md:h-[70vh] items-center">
                 <ul className="relative group flex w-full h-9/10 overflow-hidden">
                     <button onClick={() => { handleCarrusel(setCurrentIndex, AchivementsList.length, false) }}
                         className={`absolute p-2 left-0 bottom-1/2 translate-y-1/2 z-20 group-hover:bg-black/80 rounded-xl ${AnimationTime} cursor-pointer ml-2`}>

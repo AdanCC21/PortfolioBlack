@@ -63,7 +63,7 @@ export default function Carrusel({ images, indexActive, setIndex, showIndex = tr
             {(showIndex && !fullScreen) &&
                 <ul className="flex gap-4">
                     {images.map((_, indx) => (
-                        <li key={`bl-${indx}`} className={`bg-(--primary) size-2 ${indexActive === indx ? 'scale-120' : 'hover:scale-115 bg-white/40'} rounded-full cursor-pointer ${AnimationTime}`} onClick={() => {
+                        <li key={`bl-${indx}`} className={`bg-(--primary) size-1 md:size-2 ${indexActive === indx ? 'scale-120' : 'hover:scale-115 bg-white/40'} rounded-full cursor-pointer ${AnimationTime}`} onClick={() => {
                             setIndex(indx)
                         }}>
                         </li>
