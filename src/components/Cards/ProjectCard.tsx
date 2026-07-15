@@ -1,5 +1,6 @@
 import Tag from "../Tag"
 import { AnimationTime } from "@/constants/animations"
+import { useLanguage } from "@/hooks/useLanguage"
 import type { ImageModel } from "@/model/Image"
 
 interface ProjectCardProps {
@@ -14,6 +15,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ image, title, description, techs = [], onDetails }: ProjectCardProps) {
+    const {language} = useLanguage()
     return (
         <div className="flex flex-col flex-1  gap-3">
             <img src={image} alt={title} className="w-full object-cover aspect-video rounded-sm" />
@@ -42,7 +44,7 @@ export default function ProjectCard({ image, title, description, techs = [], onD
                         onClick={onDetails}
                         className={`text-sm text-(--text-gray) border-b border-b-white/0 hover:text-white hover:border-b-white whitespace-nowrap ml-auto cursor-pointer ${AnimationTime}`}
                     >
-                        Ver Detalles
+                        {language === 'es' ? 'Ver detalles' : 'See details'}
                     </button>
                 )}
             </div>

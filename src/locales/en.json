@@ -38,15 +38,15 @@
       },
       {
         "title": "Full Stack Developer",
-        "description": "I participated alongside university friends in the TalentLand hackathon at Expo Guadalajara, within the McDonald's track. We proposed an accessibility-focused application that would help users navigate the app through a bot and options adapted to different disabilities. Although we did not reach the finals, we were part of the 500 selected participants out of 1500 applicants.",
+        "description": "I led the development of a web platform for managing test/QA processes for projects within the Software Development Department (DDS) at UABC. I was responsible for the design, database, Keycloak authentication implementation, and both frontend and backend development. Initially, the team consisted of just myself and the client; approximately three months later, a teammate joined, who supported documentation and, in the final months, frontend development.",
         "place": "Department of Software Development (DDS) - UABC",
-        "date": "Jan - 2025 / Jun - 2026"
+        "date": "Aug - 2025 / May - 2026"
       },
       {
         "title": "Frontend Developer",
         "description": "I participated in the frontend development of a web platform focused on supporting the development of skills in infants with developmental disorders. I translated Figma designs into functional interfaces in React with NextJs, maintaining constant communication with the project manager and proposing design improvements that were largely adopted. Everything was handled remotely.",
         "place": "CAF",
-        "date": "Mar - 2025 / Jun - 2026"
+        "date": "Mar - 2025 / Jul - 2026"
       }
     ]
   },

@@ -2,7 +2,7 @@ import Button from "@/components/Button"
 import { AnimationTime } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
 import { useLanguage } from "@/hooks/useLanguage"
-import { useState, type RefObject } from "react"
+import { type RefObject } from "react"
 
 interface HomeProps {
   homeRef: RefObject<any>
@@ -10,7 +10,6 @@ interface HomeProps {
 }
 
 export default function Home({ homeRef, projRef }: HomeProps) {
-  const [showDescription, setShowDescription] = useState(false)
   const { t } = useLanguage()
 
   return (

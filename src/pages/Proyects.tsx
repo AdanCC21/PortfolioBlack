@@ -61,7 +61,7 @@ export default function Proyects({ projRef }: Prompts) {
 
             </ul>
 
-            <Modal title={curProject?.title ?? t.projects.modal.title} icon={{ src: `/projects/${curProject?.folder}/z_logo.webp`, alt: "logo" }} isOpen={viewModal} setIsOpen={showModal} onClose={() => { setProj(null); setImages([]); }}>
+            <Modal title={curProject?.title ?? t.projects.modal.title} icon={{ src: curProject?.title !== 'ActOne' ? `/projects/${curProject?.folder}/z_logo.webp` : '', alt: "logo" }} isOpen={viewModal} setIsOpen={showModal} onClose={() => { setProj(null); setImages([]); }}>
                 {curProject ?
                     <>
                         <div className="flex flex-col justify-between order-1">

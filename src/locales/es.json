@@ -38,15 +38,15 @@
       },
       {
         "title": "Desarrollador Full Stack",
-        "description": "Participé junto a amigos de la universidad en el hackathon de TalentLand en la Expo Guadalajara, dentro del track de McDonald's. Propusimos una aplicación enfocada en accesibilidad que ayudara a los usuarios a navegar la app mediante un bot y opciones adaptadas a distintas discapacidades. Aunque no llegamos a la final, fuimos parte de los 500 participantes seleccionados entre 1500 solicitantes.",
+        "description": "Lideré el desarrollo de una plataforma web para gestionar las pruebas de los proyectos del Departamento de Desarrollo de Software (DDS) de la UABC. Estuve a cargo del diseño, la base de datos, la implementación de Keycloak para autenticación, y el desarrollo frontend y backend. Al inicio el equipo lo conformábamos solo yo y el cliente; aproximadamente tres meses después se incorporó un compañero, quien apoyó en documentación y, en los últimos meses, en el área de frontend.",
         "place": "Departamento de Desarrollo de Software (DDS) - UABC",
-        "date": "Ene - 2025 / Jun - 2026"
+        "date": "Ago - 2025 / May - 2026"
       },
       {
         "title": "Desarrollador Frontend",
         "description": "Participé en el desarrollo frontend de una plataforma web enfocada en apoyar el proceso de desarrollo de habilidades en infantes con transtornos del desarrollo. Traduje diseños de Figma a interfaces funcionales en React con NextJs, manteniendo comunicación constante con la encargada del proyecto y proponiendo mejoras de diseño que fueron mayormente adoptadas. Todo se manejó de manera remota.",
         "place": "CAF",
-        "date": "Mar - 2025 / Jun - 2026"
+        "date": "Mar - 2025 / Jul - 2026"
       }
     ]
   },
@@ -83,13 +83,13 @@
         "whatIs": "Es un sitio web donde puedes mejorar tus personajes ficticios para enfrentarlos en una batalla campal. Conforme vas jugando, se producen eventos especiales como muertes, asesinatos, alianzas temporales y recolección de objetos, creando una narrativa dinámica y aleatoria.",
         "rol": "FullStack",
         "location": "Ensenada, B.C. México",
-        "date": "apr 2025"
+        "date": "abr 2025"
       },
       {
         "title": "Gestor de pruebas",
-        "description": "Este proyecto actualmente es clasificado, pero fue solicitado por el Departamento de Desarrollo de Software de la UABC.",
+        "description": "Este proyecto actualmente es clasificado, fue solicitado por el Departamento de Desarrollo de Software de la UABC.",
         "whatIdo": "Llevé a cabo todo el desarrollo del proyecto: diseño, base de datos, código frontend/backend, y apoyé con el deploy. Sin embargo, no estuve solo todo el tiempo; al inicio éramos solo yo y el cliente, y después de 3 meses se integró mi compañero de equipo, quien nos apoyó en la documentación y, en los últimos meses, en el área de frontend",
-        "whatIs": "Este proyecto actualmente es clasificado, pero fue solicitado por el Departamento de Desarrollo de Software de la UABC. Si necesitas más información, escríbeme y con gusto lo platicamos",
+        "whatIs": "Este proyecto actualmente es clasificado, fue solicitado por el Departamento de Desarrollo de Software de la UABC. Si necesitas más información, escríbeme y con gusto lo platicamos",
         "rol": "FullStack",
         "location": "Ensenada, B.C. México",
         "date": "oct - 2025 / may 2026",
