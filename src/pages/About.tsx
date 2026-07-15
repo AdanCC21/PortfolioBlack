@@ -6,14 +6,27 @@ interface Prompts {
 }
 
 export default function About({ pageRef }: Prompts) {
+    const backgroundIcons = [
+        { src: Icons.typescript, alt: "Typescript", className: "size-8 rotate-12 sm:size-10", position: "left-[6%] top-[12%]" },
+        { src: Icons.cpp, alt: "c++", className: "size-10 rotate-[-10deg] sm:size-14", position: "right-[6%] bottom-[15%]" },
+    ]
+
     return (
-        <section ref={pageRef} className="flex flex-col min-h-screen xl:min-h-min w-screen gap-4 page-padding mb-12">
-            <div className="flex w-full justify-between pb-4 border-b">
+        <section ref={pageRef} className="relative flex flex-col min-h-screen xl:min-h-min w-screen gap-4 page-padding mb-12 overflow-hidden">
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                {backgroundIcons.map((icon) => (
+                    <div key={icon.alt} className={`absolute ${icon.position} opacity-10`}>
+                        <img src={icon.src} alt={icon.alt} className={icon.className} />
+                    </div>
+                ))}
+            </div>
+
+            <div className="relative z-10 flex w-full justify-between pb-4 border-b">
                 <h2 className="text-4xl font-bold">Sobre Mi</h2>
                 <span className="text-4xl opacity-10 font-bold">{'o.o'}</span>
             </div>
 
-            <div className="flex flex-col gap-8 md:flex-row md:justify-between lg:h-[60vh]">
+            <div className="relative z-10 flex flex-col gap-8 md:flex-row md:justify-between lg:h-[60vh]">
                 <div className="flex items-center justify-center order-1 md:order-2 md:h-full md:overflow-hidden">
                     <img src="/informal.jpg" alt="Yo" className="w-full max-h-80 object-cover rounded-xl shadow-lg md:max-h-none md:h-full md:w-auto md:max-w-[320px] lg:max-w-[360px] md:object-contain md:scale-110" />
                 </div>

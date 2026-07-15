@@ -26,6 +26,7 @@ import Menu from "@/assets/icons/menu.svg"
 import Close from "@/assets/icons/close.svg"
 
 import Document from "@/assets/icons/document.svg"
+import Page from "@/assets/icons/page.svg"
 
 export const Icons = {
     react: React,
@@ -53,6 +54,7 @@ export const Icons = {
     menu: Menu,
     close:Close,
     document:Document,
+    page:Page,
 
     linkedin:Linkedin,
     gmail:Gmail,

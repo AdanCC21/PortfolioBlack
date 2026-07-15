@@ -17,6 +17,8 @@ export interface Project {
     team?: string[]
 
     folder: string
+    repo?: string
+    page?: string
 }
 export const Projects: Project[] = [
     {
@@ -30,7 +32,11 @@ export const Projects: Project[] = [
         date: "feb - 2026 / jun 2026",
         team: ["Antonio Ramos", "Adan Gonzalez Ceseña"],
         folder: "cibershield",
-        tecs: [{ label: "React", img: { src: Icons.react, alt: "React" } }, { label: "NestJs", img: { src: Icons.nestJs, alt: "NestJs" } }]
+        tecs: [{ label: "React", img: { src: Icons.react, alt: "React" } }, { label: "NestJs", img: { src: Icons.nestJs, alt: "NestJs" } }],
+
+        repo: "https://github.com/AdanCC21/CibershieldFront.git",
+        page: "https://cibershield-mu.vercel.app/",
+
     },
     {
         title: "WolfForest",
@@ -41,7 +47,10 @@ export const Projects: Project[] = [
         location: "Ensenada, B.C. Mexico",
         date: "apr 2025",
         folder: "wolfForest",
-        tecs: [{ label: "React", img: { src: Icons.react, alt: "React" } }, { label: "TypeScript", img: { src: Icons.typescript, alt: "TypeScript" } }, { label: "TailwindCSS", img: { src: Icons.tailwindcss, alt: "TailwindCSS" } }]
+        tecs: [{ label: "React", img: { src: Icons.react, alt: "React" } }, { label: "TypeScript", img: { src: Icons.typescript, alt: "TypeScript" } }, { label: "TailwindCSS", img: { src: Icons.tailwindcss, alt: "TailwindCSS" } }],
+
+        repo: "https://github.com/AdanCC21/WolfForestTs.git",
+        page: "https://wolf-forest-ts.vercel.app/"
     },
     {
         title: "Gestor de pruebas",
@@ -61,7 +70,7 @@ export const Projects: Project[] = [
         description: "Una red social diseñada para compartir historias, donde los usuarios pueden compartir sus anécdotas en un formato dividido por actos.",
         whatIdo: "Llevé a cabo todo lo que conlleva este proyecto. Fue un proyecto escolar, pero me gustó mucho el resultado final; de momento estoy en proceso de refactorizar el código y el diseño",
         whatIs: "Una red social diseñada para compartir historias, donde los usuarios pueden compartir sus anécdotas en un formato dividido por actos. La plataforma también incluye un modo de concentración para creadores de contenido, que permite leer las historias párrafo por párrafo, eliminando distracciones y ofreciendo una experiencia más inmersiva.",
-        
+
         rol: "FullStack",
         location: "Ensenada, B.C. Mexico",
         date: "jun / 2025",

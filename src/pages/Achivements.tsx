@@ -11,15 +11,18 @@ interface Prompts {
 
 export default function Achivements({ pageRef }: Prompts) {
     const [currentIndex, setCurrentIndex] = useState(1);
+    
 
     return (
-        <div ref={pageRef} className="flex flex-col w-full gap-4 page-padding">
-            <div className="flex w-full justify-between pb-4 border-b">
+        <div ref={pageRef} className="relative flex flex-col w-full gap-4 page-padding overflow-hidden">
+            
+
+            <div className="relative z-10 flex w-full justify-between pb-4 border-b">
                 <h2 className="text-4xl font-bold">Logros</h2>
                 <span className="text-4xl opacity-10 font-bold">{'< >'}</span>
             </div>
 
-            <div className="flex flex-col w-full gap-4 md:gap-0 h-[85vh] md:h-[70vh] items-center">
+            <div className="relative z-10 flex flex-col w-full gap-4 md:gap-0 h-[85vh] md:h-[70vh] items-center">
                 <ul className="relative group flex w-full h-9/10 overflow-hidden">
                     <button onClick={() => { handleCarrusel(setCurrentIndex, AchivementsList.length, false) }}
                         className={`absolute p-2 left-0 bottom-1/2 translate-y-1/2 z-20 group-hover:bg-black/80 rounded-xl ${AnimationTime} cursor-pointer ml-2`}>

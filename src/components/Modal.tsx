@@ -43,7 +43,7 @@ export default function Modal({ children, title, icon, isOpen, setIsOpen, onClos
                             <img src={Icons.close} alt="Cerrar" className="h-8 w-fit ml-auto hover:scale-110 cursor-pointer" onClick={() => { setIsOpen(false); onClose?.() }} />
                         </header>
 
-                        <main className="flex flex-col flex-1 overflow-y-auto">
+                        <main className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
                             {children}
                         </main>
 
