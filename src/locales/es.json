@@ -9,7 +9,7 @@
   "home": {
     "role": "Desarrollador Full Stack",
     "name": "Adan Gonzalez Ceseña",
-    "title": "Ing. Software y Tecnologias Emergentes",
+    "title": "Ing. Software y Tecnologías Emergentes",
     "description": "Desarrollador web orientado al Frontend, con capacidad full stack. Me especializo en crear interfaces limpias y responsivas conectadas a servicios robustos en el backend.",
     "cv": "CV",
     "linkedin": "Linkedin",
@@ -20,7 +20,7 @@
   },
   "about": {
     "title": "Sobre Mi",
-    "subtitle": "Tecnologías que Domino",
+    "subtitle": "Tecnologías que domino",
     "paragraphs": [
       "Cursé la carrera de Ingeniería en Software y Tecnologías Emergentes. Mi enfoque profesional está orientado al desarrollo web frontend y backend, utilizando herramientas y tecnologías modernas como React, Vue, NestJS, TypeScript, entre otras.",
       "Disfruto tomar un diseño existente y convertirlo en una interfaz responsive y funcional, cuidando tanto la lógica del frontend como la conexión con el backend: manejo de tokens, consultas SQL, autenticación, etc. También me adapto a proyectos donde necesito proponer el diseño desde cero.",

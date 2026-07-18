@@ -20,7 +20,7 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "Technologies I Master",
+    "subtitle": "Technologies i master",
     "paragraphs": [
       "I studied Software Engineering and Emerging Technologies. My professional focus is on frontend and backend web development, using modern tools and technologies such as React, Vue, NestJS, TypeScript, among others.",
       "I enjoy taking an existing design and turning it into a responsive and functional interface, taking care of both the frontend logic and the connection to the backend: token handling, SQL queries, authentication, etc. I also adapt to projects where I need to propose the design from scratch.",

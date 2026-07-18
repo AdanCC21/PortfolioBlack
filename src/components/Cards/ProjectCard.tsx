@@ -15,9 +15,9 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ image, title, description, techs = [], onDetails }: ProjectCardProps) {
-    const {language} = useLanguage()
+    const { language } = useLanguage()
     return (
-        <div className="flex flex-col flex-1  gap-3">
+        <div className="flex flex-col flex-1 gap-3 cursor-pointer" onClick={() => { onDetails?.(); }}>
             <img src={image} alt={title} className="w-full object-cover aspect-video rounded-sm" />
 
             <div className="flex flex-col gap-3">

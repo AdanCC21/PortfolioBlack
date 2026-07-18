@@ -48,7 +48,7 @@ export default function About({ pageRef }: Prompts) {
                         <p>
                             {t.about.paragraphs[2]}
                         </p>
-                        <br />
+
                         <div className="flex items-center gap-2">
                             <img src={Icons.gmail} alt="gmail" className="size-4" />
                             <a href="mailto:andan.devp@gmail.com" className={`text-base border-b border-b-white/0 hover:border-b-white/80 ${AnimationTime}`}>

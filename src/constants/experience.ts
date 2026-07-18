@@ -42,7 +42,7 @@ export const Experiences: Experience[] = [
         description: "Formación en desarrollo de software full-stack y tecnologías emergentes, con experiencia práctica en proyectos web, hackathons y desarrollo profesional en UABC.",
         place: "U.A.B.C. Campus Ensenada",
         date: "Ago - 2022 / Jun - 2026",
-        tecs: [{ label: "React", img: { src: Icons.react , alt: "React" } }, { label: "C++", img: { src: Icons.react , alt: "C++" } }, { label: "Java", img: { src: Icons.react , alt: "Java" } }, { label: "NestJs", img: { src: Icons.nestJs , alt: "NestJs" } },  ],
+        tecs: [{ label: "React", img: { src: Icons.react , alt: "React" } }, { label: "C++", img: { src: Icons.cpp , alt: "C++" } }, { label: "Java", img: { src: Icons.java , alt: "Java" } }, { label: "NestJs", img: { src: Icons.nestJs , alt: "NestJs" } }, { label: "Typescript", img: { src: Icons.typescript , alt: "Typescript" } }, { label: "Javascript", img: { src: Icons.javascript , alt: "Javascript" } },],
         folder: "degree"
     },
     {
@@ -50,7 +50,7 @@ export const Experiences: Experience[] = [
         description: "Participé junto a amigos de la universidad en el hackathon de TalentLand en la Expo Guadalajara, dentro del track de McDonald's. Propusimos una aplicación enfocada en accesibilidad que ayudara a los usuarios a navegar la app mediante un bot y opciones adaptadas a distintas discapacidades. Aunque no llegamos a la final, fuimos parte de los 500 participantes seleccionados entre 1500 solicitantes.",
         place: "Departamento de Desarrollo de Software (DDS) - UABC",
         date: "Ene - 2025 / Jun - 2026",
-        tecs: [{ label: "React", img: { src: Icons.react , alt: "React" } }, { label: "NestJs", img: { src: Icons.nestJs , alt: "NestJs" } },  ],
+        tecs: [{ label: "React", img: { src: Icons.react , alt: "React" } }, { label: "NestJs", img: { src: Icons.nestJs , alt: "NestJs" } }, { label: "Vite", img: { src: Icons.vite , alt: "Vite" } }, { label: "Prisma", img: { src: Icons.prisma , alt: "Prisma" } }, ],
         folder: "dds"
     },
     {
