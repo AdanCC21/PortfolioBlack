@@ -32,7 +32,7 @@ export default function About({ pageRef }: Prompts) {
 
             <div className="relative z-10 flex flex-col gap-8 md:flex-row md:justify-between lg:h-[60vh]">
                 <div className="flex items-center justify-center order-1 md:order-2 md:h-full md:overflow-hidden">
-                    <img src="/informal.jpg" alt="Yo" className="w-full max-h-80 object-cover rounded-xl shadow-lg md:max-h-none md:h-full md:w-auto md:max-w-[320px] lg:max-w-[360px] md:object-contain md:scale-110" />
+                    <img src="/informal.webp" alt="Yo" className="w-full max-h-80 object-cover rounded-xl shadow-lg md:max-h-none md:h-full md:w-auto md:max-w-[320px] lg:max-w-[360px] md:object-contain md:scale-110" />
                 </div>
 
                 <section className="flex flex-col gap-4 size-full order-2 md:order-1 md:w-3/4">
