@@ -12,6 +12,9 @@ import Spring from "@/assets/icons/tecnologies/spring-boot.svg"
 import SQL from "@/assets/icons/tecnologies/sql.svg"
 import Tailwindcss from "@/assets/icons/tecnologies/tailwindcss.svg"
 import Vite from "@/assets/icons/tecnologies/vite.svg"
+import Angular from "@/assets/icons/tecnologies/angular.svg"
+import Net from "@/assets/icons/tecnologies/net.svg"
+import CSharp from "@/assets/icons/tecnologies/c-sharp.svg"
 
 import React_org from "@/assets/icons/tecnologies/react-or.svg"
 import NestJs_org from "@/assets/icons/tecnologies/nestjs-or.svg"
@@ -31,6 +34,7 @@ import Page from "@/assets/icons/page.svg"
 export const Icons = {
     react: React,
     nestJs: NestJs,
+    angular: Angular,
     vue: Vue,
     typescript: Typescript,
     
@@ -42,10 +46,12 @@ export const Icons = {
     prisma: Prisma,
     
     cpp: Cpp,
+    cSharp: CSharp,
     java: Java,
     python: Python,
 
     spring: Spring,
+    net: Net,
     sql: SQL,
     tailwindcss: Tailwindcss,
     vite: Vite,
