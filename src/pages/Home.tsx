@@ -26,7 +26,7 @@ export default function Home({ homeRef, projRef }: HomeProps) {
 
       <div className="relative flex w-full flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
         <img
-          src="/yo.png"
+          src="/yo.webp"
           alt="Adan Gonzalez Ceseña"
           className="order-1 rounded-full lg:max-w-[30vw] object-cover aspect-square size-52 lg:order-2 md:size-72 lg:size-110"
         />
