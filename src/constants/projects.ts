@@ -74,6 +74,23 @@ export const Projects: Project[] = [
 
     },
     {
+        title: "MiniShop",
+        description: "MiniShop es un sistema de administración para tienditas de abarrotes que digitaliza la operación diaria de la tienda.",
+        whatIdo: "Llevé a cabo todo el desarrollo de este sistema: planeación, diseño de la arquitectura y código. Me apoyé en herramientas de Inteligencia Artificial para optimizar el proceso de desarrollo y las mejoras al código.",
+        whatIs: "MiniShop es un sistema de administración para tienditas de abarrotes que digitaliza la operación diaria de la tienda. Permite cobrar con diferentes métodos de pago (efectivo, tarjeta, mixto o fiado), llevar el control de cierres de caja, dar seguimiento a pedidos con proveedores, gestionar las cuentas de clientes fiados y administrar el catálogo de productos. Es un sistema simple y accesible para dueños de tienditas y sus empleados. Cabe aclarar que la versión ligada a este portafolio es únicamente una versión de prueba: todo es local y no guarda datos realmente, con el propósito de dar una vista previa general del producto.",
+
+        rol: "FullStack",
+        location: "Ensenada, B.C. Mexico",
+        date: "Jun - 2026 / Ago 2026",
+        team: ["Adan Gonzalez Ceseña"],
+        folder: "miniShop",
+        tecs: [{ label: "Angular", img: { src: Icons.angular, alt: "Angular" } }, { label: "NestJs", img: { src: Icons.nestJs, alt: "NestJs" } }, { label: "OpenCode", img: { src: Icons.openCode, alt: "OpenCode" } }],
+
+        repo: "https://github.com/AdanCC21/miniShop_front",
+        page: "https://mini-shop-topaz.vercel.app",
+
+    },
+    {
         title: "WolfForest",
         description: "Es un sitio web donde puedes mejorar tus personajes ficticios para enfrentarlos en una batalla campal.",
         whatIdo: "Llevé a cabo todo el proceso de desarrollo de esta página: diseño, código, mecánicas, etc. Es un rediseño y refactorización de uno de los primeros proyectos que hice en mi carrera",

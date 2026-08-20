@@ -72,6 +72,7 @@ export default function About({ pageRef }: Prompts) {
                         <Tag labelSize="text-sm" label="Typescript" icon={{ src: Icons.typescript, alt: 'typecript', className: 'size-3' }} />
                         <Tag labelSize="text-sm" label="Javascript" icon={{ src: Icons.javascript, alt: 'javascript', className: 'size-3' }} />
                         <Tag labelSize="text-sm" label="NextJs" icon={{ src: Icons.nextjs, alt: 'Nextjs', className: 'size-3' }} />
+                        <Tag labelSize="text-sm" label="OpenCode" icon={{ src: Icons.openCode, alt: 'OpenCode', className: 'size-3' }} />
                         <Tag labelSize="text-sm" label="Vite" icon={{ src: Icons.vite, alt: 'vite', className: 'size-3' }} />
                         <Tag labelSize="text-sm" label="Prisma" icon={{ src: Icons.prisma, alt: 'prisma', className: 'size-3' }} />
                         <Tag labelSize="text-sm" label="SQL" icon={{ src: Icons.sql, alt: 'SQL', className: 'size-3' }} />

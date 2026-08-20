@@ -15,6 +15,7 @@ import Vite from "@/assets/icons/tecnologies/vite.svg"
 import Angular from "@/assets/icons/tecnologies/angular.svg"
 import Net from "@/assets/icons/tecnologies/net.svg"
 import CSharp from "@/assets/icons/tecnologies/c-sharp.svg"
+import OpenCode from "@/assets/icons/tecnologies/opencode.svg"
 
 import React_org from "@/assets/icons/tecnologies/react-or.svg"
 import NestJs_org from "@/assets/icons/tecnologies/nestjs-or.svg"
@@ -37,6 +38,7 @@ export const Icons = {
     angular: Angular,
     vue: Vue,
     typescript: Typescript,
+    openCode: OpenCode,
     
     react_or: React_org,
     nestJs_or: NestJs_org,

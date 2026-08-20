@@ -74,7 +74,19 @@
         "rol": "FullStack",
         "location": "Ensenada, B.C. Mexico",
         "date": "feb - 2026 / jun 2026",
-        "team": ["Antonio Ramos", "Adan Gonzalez Ceseña"]
+        "team": [
+          "Antonio Ramos",
+          "Adan Gonzalez Ceseña"
+        ]
+      },
+      {
+        "title": "MiniShop",
+        "description": "MiniShop is an administration system for small grocery stores that digitizes the store's daily operations.",
+        "whatIdo": "I led the entire development of this system: planning, architecture design, and code. I used Artificial Intelligence tools to streamline the development process and improve the code.",
+        "whatIs": "MiniShop is an administration system for small grocery stores that digitizes the store's daily operations. It allows checkout with different payment methods (cash, card, mixed, or store credit), keeps track of cash register closings, manages orders with suppliers, tracks customer store-credit accounts, and manages the product catalog. It also handles different access levels: the store owner controls their store's settings and employees, while cashiers only operate the point of sale and view basic information. It's a simple, accessible system for small store owners and their employees. Note that the version linked to this portfolio is a demo version only — everything runs locally and no data is actually saved, with the purpose of giving a general preview of the product. See the repository README for more information",
+        "rol": "FullStack",
+        "location": "Ensenada, B.C. Mexico",
+        "date": "jul 2026 - apr 2026"
       },
       {
         "title": "WolfForest",
@@ -93,7 +105,10 @@
         "rol": "FullStack",
         "location": "Ensenada, B.C. Mexico",
         "date": "oct - 2025 / may 2026",
-        "team": ["Abraham Gonzalez Páez", "Adan Gonzalez"]
+        "team": [
+          "Abraham Gonzalez Páez",
+          "Adan Gonzalez"
+        ]
       },
       {
         "title": "ActOne",
