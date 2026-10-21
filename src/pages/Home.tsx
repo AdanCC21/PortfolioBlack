@@ -2,7 +2,7 @@ import Button from "@/components/Button"
 import { AnimationTime } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
 import { useLanguage } from "@/hooks/useLanguage"
-import { pageEntry } from "@/constants/animations"
+import { homeItemEntry, pageEntryViewport } from "@/constants/animations"
 import { motion } from "framer-motion"
 import { type RefObject } from "react"
 
@@ -15,7 +15,7 @@ export default function Home({ homeRef, projRef }: HomeProps) {
   const { t } = useLanguage()
 
   return (
-    <motion.section ref={homeRef} variants={pageEntry} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
+    <section ref={homeRef}
       className="relative flex min-h-(--homeHeight) w-full items-center overflow-hidden page-padding py-12 no-top sm:py-16 lg:py-0"
     >
       <div className="absolute top-8 left-8 opacity-20 sm:opacity-30">
@@ -27,13 +27,17 @@ export default function Home({ homeRef, projRef }: HomeProps) {
       </div>
 
       <div className="relative flex w-full flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
-        <img
+        <motion.img
+          variants={homeItemEntry}
+          initial="hidden"
+          whileInView="visible"
+          viewport={pageEntryViewport}
           src="/yo.webp"
           alt="Adan Gonzalez Ceseña"
           className="order-1 rounded-full lg:max-w-[30vw] object-cover aspect-square size-52 lg:order-2 md:size-72 lg:size-110"
         />
 
-        <div className="order-2 z-10 flex max-w-2xl w-full flex-col items-center text-center lg:order-1 lg:items-start lg:text-left">
+        <motion.div variants={homeItemEntry} initial="hidden" whileInView="visible" viewport={pageEntryViewport} className="order-2 z-10 flex max-w-2xl w-full flex-col items-center text-center lg:order-1 lg:items-start lg:text-left">
           <span className="text-sm uppercase tracking-widest text-(--text-gray)">
             {t.home.role}
           </span>
@@ -65,9 +69,13 @@ export default function Home({ homeRef, projRef }: HomeProps) {
 
             <Button label={t.home.github} icon={{ src: Icons.github, alt: "Github", iconRight: true }} onClick={() => { window.open("https://github.com/AdanCC21", "_blank") }} btnStyle="outline-secondary" />
           </div>
-        </div>
+        </motion.div>
 
-        <button
+        <motion.button
+          variants={homeItemEntry}
+          initial="hidden"
+          whileInView="visible"
+          viewport={pageEntryViewport}
           className={`hidden lg:flex absolute bottom-0 left-0 w-fit items-center gap-2 cursor-pointer hover:scale-105 ${AnimationTime}`}
           onClick={() => projRef.current?.scrollIntoView({ behavior: "smooth" })}
         >
@@ -75,10 +83,14 @@ export default function Home({ homeRef, projRef }: HomeProps) {
             <img src={Icons.arrowDown} alt="go down" className="size-4 rotate-90" />
           </div>
           <span className="text-base">{t.home.projects}</span>
-        </button>
+        </motion.button>
       </div>
 
-      <button
+      <motion.button
+        variants={homeItemEntry}
+        initial="hidden"
+        whileInView="visible"
+        viewport={pageEntryViewport}
         className={`flex lg:hidden absolute bottom-10 right-1/2 translate-x-1/2 w-fit items-center gap-2 cursor-pointer hover:scale-105 ${AnimationTime}`}
         onClick={() => projRef.current?.scrollIntoView({ behavior: "smooth" })}
       >
@@ -86,11 +98,11 @@ export default function Home({ homeRef, projRef }: HomeProps) {
           <img src={Icons.arrowDown} alt="go down" className="size-4 rotate-90" />
         </div>
         <span className="text-base">{t.home.projects}</span>
-      </button>
+      </motion.button>
 
       <div className="absolute bottom-15 right-15 opacity-20 sm:opacity-30">
         <img src={Icons.nestJs_or} alt="nestjs logo" className="size-14 rotate-15 sm:size-20" />
       </div>
-    </motion.section>
+    </section>
   )
 }

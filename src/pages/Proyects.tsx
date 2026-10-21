@@ -7,7 +7,7 @@ import { Icons } from "@/constants/Icons"
 import { getProjects, type Project } from "@/constants/projects"
 import { useLanguage } from "@/hooks/useLanguage"
 import { GetImages } from "@/scripts/images"
-import { pageEntry } from "@/constants/animations"
+import { pageEntry, pageEntryViewport } from "@/constants/animations"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 
@@ -42,7 +42,7 @@ export default function Proyects({ projRef }: Prompts) {
     }, [curProject?.title])
 
     return (
-        <motion.section ref={projRef} variants={pageEntry} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="relative flex flex-col w-full min-h-[80vh] page-padding overflow-hidden">
+        <section ref={projRef} className="relative flex flex-col w-full min-h-[80vh] page-padding overflow-hidden">
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
                 {backgroundIcons.map((icon) => (
                     <div key={icon.alt} className={`absolute ${icon.position} opacity-10`}>
@@ -58,7 +58,15 @@ export default function Proyects({ projRef }: Prompts) {
 
             <ul className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 py-4">
                 {projects.map((project: Project) => (
-                    <ProjectCard key={project.title} title={project.title} image={GetImages(project.folder)[0]} description={project.description} techs={project.tecs} onDetails={() => { showModal(true); setProj(project); }} />
+                    <motion.li
+                        key={project.title}
+                        variants={pageEntry}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={pageEntryViewport}
+                    >
+                        <ProjectCard title={project.title} image={GetImages(project.folder)[0]} description={project.description} techs={project.tecs} onDetails={() => { showModal(true); setProj(project); }} />
+                    </motion.li>
                 ))}
 
             </ul>
@@ -125,7 +133,7 @@ export default function Proyects({ projRef }: Prompts) {
                     </>
                 }
             </Modal>
-        </motion.section>
+        </section>
     )
 }
 

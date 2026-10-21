@@ -11,7 +11,7 @@
 
   --headerHeight: 8vh;
   --homeHeight: calc(100vh - var(--headerHeight));
-  --pageSpace: 10vw
+  --pageSpace: 10vw;
 }
 
 @theme {
@@ -61,5 +61,11 @@ body {
 .page-margin {
   margin-left: var(--pageSpace);
   margin-right: var(--pageSpace);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --pageSpace: 15vw;
+  }
 }
 

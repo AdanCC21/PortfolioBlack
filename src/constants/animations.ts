@@ -7,6 +7,17 @@ export const pageEntryTransition = {
     ease: "easeOut",
 } as const;
 
+export const pageEntryViewport = {
+    once: true,
+    amount: 0.3,
+} as const;
+
+export const experienceItemViewport = {
+    once: true,
+    amount: 0.35,
+    margin: "0px 0px -30% 0px",
+} as const;
+
 export const pageEntry: Variants = {
     hidden: {
         opacity: 0,
@@ -16,6 +27,17 @@ export const pageEntry: Variants = {
         opacity: 1,
         y: 0,
         transition: pageEntryTransition,
+    },
+};
+
+export const homeItemEntry: Variants = {
+    hidden: pageEntry.hidden,
+    visible: {
+        ...pageEntry.visible,
+        transition: {
+            ...pageEntryTransition,
+            delay: 0.12,
+        },
     },
 };
 
