@@ -14,7 +14,7 @@ export const pageEntryViewport = {
 
 export const experienceItemViewport = {
     once: true,
-    amount: 0.35,
+    amount: 0,
     margin: "0px 0px -30% 0px",
 } as const;
 
@@ -30,13 +30,34 @@ export const pageEntry: Variants = {
     },
 };
 
-export const homeItemEntry: Variants = {
-    hidden: pageEntry.hidden,
+export const homeItemEntry = (delay = 0): Variants => ({
+    hidden: {
+        opacity: 0,
+        x: -18,
+    },
     visible: {
-        ...pageEntry.visible,
+        opacity: 1,
+        x: 0,
         transition: {
-            ...pageEntryTransition,
-            delay: 0.12,
+            duration: 0.7,
+            ease: "easeOut",
+            delay,
+        },
+    },
+});
+
+export const homeImageEntry: Variants = {
+    hidden: {
+        opacity: 0,
+        y: 18,
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
+            ease: "easeOut",
+            delay: 0.25,
         },
     },
 };

@@ -2,7 +2,7 @@ import Button from "@/components/Button"
 import { AnimationTime } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
 import { useLanguage } from "@/hooks/useLanguage"
-import { homeItemEntry, pageEntryViewport } from "@/constants/animations"
+import { homeImageEntry, homeItemEntry, pageEntryViewport } from "@/constants/animations"
 import { motion } from "framer-motion"
 import { type RefObject } from "react"
 
@@ -28,7 +28,7 @@ export default function Home({ homeRef, projRef }: HomeProps) {
 
       <div className="relative flex w-full flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
         <motion.img
-          variants={homeItemEntry}
+          variants={homeImageEntry}
           initial="hidden"
           whileInView="visible"
           viewport={pageEntryViewport}
@@ -37,30 +37,30 @@ export default function Home({ homeRef, projRef }: HomeProps) {
           className="order-1 rounded-full lg:max-w-[30vw] object-cover aspect-square size-52 lg:order-2 md:size-72 lg:size-110"
         />
 
-        <motion.div variants={homeItemEntry} initial="hidden" whileInView="visible" viewport={pageEntryViewport} className="order-2 z-10 flex max-w-2xl w-full flex-col items-center text-center lg:order-1 lg:items-start lg:text-left">
-          <span className="text-sm uppercase tracking-widest text-(--text-gray)">
+        <div className="order-2 z-10 flex max-w-2xl w-full flex-col items-center text-center lg:order-1 lg:items-start lg:text-left">
+          <motion.span variants={homeItemEntry(0)} initial="hidden" whileInView="visible" viewport={pageEntryViewport} className="text-sm uppercase tracking-widest text-(--text-gray)">
             {t.home.role}
-          </span>
+          </motion.span>
 
-          <h1 className="text-4xl font-bold sm:text-5xl lg:text-6xl 2xl:leading-tight">
+          <motion.h1 variants={homeItemEntry(0.01)} initial="hidden" whileInView="visible" viewport={pageEntryViewport} className="text-4xl font-bold sm:text-5xl lg:text-6xl 2xl:leading-tight">
             {t.home.name}
-          </h1>
+          </motion.h1>
 
-          <p className="text-lg font-light tracking-wide text-(--text-gray) sm:text-xl">
+          <motion.p variants={homeItemEntry(0.02)} initial="hidden" whileInView="visible" viewport={pageEntryViewport} className="text-lg font-light tracking-wide text-(--text-gray) sm:text-xl">
             {t.home.title}
-          </p>
+          </motion.p>
 
-          <blockquote className="hidden md:block border-l-2 border-(--secondary) pl-4 text-sm leading-relaxed my-4">
+          <motion.blockquote variants={homeItemEntry(0.03)} initial="hidden" whileInView="visible" viewport={pageEntryViewport} className="hidden md:block border-l-2 border-(--secondary) pl-4 text-sm leading-relaxed my-4">
             {t.home.description}
-          </blockquote>
+          </motion.blockquote>
 
-          <div className="md:hidden mt-4 w-full max-w-xl">
+          <motion.div variants={homeItemEntry(0.03)} initial="hidden" whileInView="visible" viewport={pageEntryViewport} className="md:hidden mt-4 w-full max-w-xl">
             <span className="flex w-full border-l-2 border-(--secondary) pl-4 text-left text-sm leading-relaxed text-(--text-gray) ">
               {t.home.description}
             </span>
-          </div>
+          </motion.div>
 
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
+          <motion.div variants={homeItemEntry(0.04)} initial="hidden" whileInView="visible" viewport={pageEntryViewport} className="mt-4 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
             <a href="/CV_Adan_Gonzalez.pdf" download="CV_Adan_Gonzalez.pdf">
               <Button label={t.home.cv} icon={{ src: Icons.document, alt: "cv", iconRight: true }} onClick={() => { }} btnStyle="outline-secondary" />
             </a>
@@ -68,11 +68,11 @@ export default function Home({ homeRef, projRef }: HomeProps) {
             <Button label={t.home.linkedin} icon={{ src: Icons.linkedin, alt: "Linkedin", iconRight: true }} onClick={() => { window.open("https://www.linkedin.com/in/adan-gonzalez-ceseña-584411338", "_blank") }} btnStyle="outline-secondary" />
 
             <Button label={t.home.github} icon={{ src: Icons.github, alt: "Github", iconRight: true }} onClick={() => { window.open("https://github.com/AdanCC21", "_blank") }} btnStyle="outline-secondary" />
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         <motion.button
-          variants={homeItemEntry}
+          variants={homeItemEntry(0.05)}
           initial="hidden"
           whileInView="visible"
           viewport={pageEntryViewport}
@@ -87,7 +87,7 @@ export default function Home({ homeRef, projRef }: HomeProps) {
       </div>
 
       <motion.button
-        variants={homeItemEntry}
+        variants={homeItemEntry(0.05)}
         initial="hidden"
         whileInView="visible"
         viewport={pageEntryViewport}
