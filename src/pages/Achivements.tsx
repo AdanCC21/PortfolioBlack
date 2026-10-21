@@ -5,6 +5,8 @@ import { Icons } from "@/constants/Icons";
 import { useLanguage } from "@/hooks/useLanguage";
 import { getCircularDiff, handleCarrusel } from "@/scripts/carrusel";
 import { useState } from "react";
+import { pageEntry } from "@/constants/animations";
+import { motion } from "framer-motion";
 
 interface Prompts {
     pageRef: React.RefObject<any>
@@ -17,7 +19,7 @@ export default function Achivements({ pageRef }: Prompts) {
     
 
     return (
-        <div ref={pageRef} className="relative flex flex-col w-full gap-4 page-padding overflow-hidden">
+        <motion.div ref={pageRef} variants={pageEntry} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="relative flex flex-col w-full gap-4 page-padding overflow-hidden">
             
 
             <div className="relative z-10 flex w-full justify-between pb-4 border-b">
@@ -56,6 +58,6 @@ export default function Achivements({ pageRef }: Prompts) {
                     ))}
                 </ul>
             </div>
-        </div>
+        </motion.div>
     )
 }

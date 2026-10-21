@@ -2,6 +2,23 @@ import type { Variants } from "framer-motion";
 
 export const AnimationTime = "transition-all ease-in-out duration-125";
 
+export const pageEntryTransition = {
+    duration: 0.7,
+    ease: "easeOut",
+} as const;
+
+export const pageEntry: Variants = {
+    hidden: {
+        opacity: 0,
+        y: 20,
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: pageEntryTransition,
+    },
+};
+
 export const fadeInOut: Variants = {
     initial: {
         opacity: 0,

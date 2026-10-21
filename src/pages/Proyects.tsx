@@ -7,6 +7,8 @@ import { Icons } from "@/constants/Icons"
 import { getProjects, type Project } from "@/constants/projects"
 import { useLanguage } from "@/hooks/useLanguage"
 import { GetImages } from "@/scripts/images"
+import { pageEntry } from "@/constants/animations"
+import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 
 interface Prompts {
@@ -40,7 +42,7 @@ export default function Proyects({ projRef }: Prompts) {
     }, [curProject?.title])
 
     return (
-        <section ref={projRef} className="relative flex flex-col w-full min-h-[80vh] page-padding overflow-hidden">
+        <motion.section ref={projRef} variants={pageEntry} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="relative flex flex-col w-full min-h-[80vh] page-padding overflow-hidden">
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
                 {backgroundIcons.map((icon) => (
                     <div key={icon.alt} className={`absolute ${icon.position} opacity-10`}>
@@ -123,7 +125,7 @@ export default function Proyects({ projRef }: Prompts) {
                     </>
                 }
             </Modal>
-        </section>
+        </motion.section>
     )
 }
 

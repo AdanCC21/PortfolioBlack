@@ -2,6 +2,8 @@ import Tag from "@/components/Tag"
 import { AnimationTime } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
 import { useLanguage } from "@/hooks/useLanguage"
+import { pageEntry } from "@/constants/animations"
+import { motion } from "framer-motion"
 
 interface Prompts {
     pageRef: React.RefObject<any>
@@ -16,7 +18,7 @@ export default function About({ pageRef }: Prompts) {
     ]
 
     return (
-        <section ref={pageRef} className="relative flex flex-col min-h-screen xl:min-h-min w-screen gap-4 page-padding mb-12 overflow-hidden">
+        <motion.section ref={pageRef} variants={pageEntry} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="relative flex flex-col min-h-screen xl:min-h-min w-screen gap-4 page-padding mb-12 overflow-hidden">
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
                 {backgroundIcons.map((icon) => (
                     <div key={icon.alt} className={`absolute ${icon.position} opacity-10`}>
@@ -86,6 +88,6 @@ export default function About({ pageRef }: Prompts) {
                     </ul>
                 </section>
             </div>
-        </section>
+        </motion.section>
     )
 }

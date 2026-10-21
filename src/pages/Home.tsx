@@ -2,6 +2,8 @@ import Button from "@/components/Button"
 import { AnimationTime } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
 import { useLanguage } from "@/hooks/useLanguage"
+import { pageEntry } from "@/constants/animations"
+import { motion } from "framer-motion"
 import { type RefObject } from "react"
 
 interface HomeProps {
@@ -13,7 +15,7 @@ export default function Home({ homeRef, projRef }: HomeProps) {
   const { t } = useLanguage()
 
   return (
-    <section ref={homeRef}
+    <motion.section ref={homeRef} variants={pageEntry} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}
       className="relative flex min-h-(--homeHeight) w-full items-center overflow-hidden page-padding py-12 no-top sm:py-16 lg:py-0"
     >
       <div className="absolute top-8 left-8 opacity-20 sm:opacity-30">
@@ -89,6 +91,6 @@ export default function Home({ homeRef, projRef }: HomeProps) {
       <div className="absolute bottom-15 right-15 opacity-20 sm:opacity-30">
         <img src={Icons.nestJs_or} alt="nestjs logo" className="size-14 rotate-15 sm:size-20" />
       </div>
-    </section>
+    </motion.section>
   )
 }

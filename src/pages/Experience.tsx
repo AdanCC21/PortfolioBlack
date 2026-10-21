@@ -2,6 +2,8 @@ import Tag from "@/components/Tag"
 import { Icons } from "@/constants/Icons"
 import { getExperiences, type Experience } from "@/constants/experience"
 import { useLanguage } from "@/hooks/useLanguage"
+import { pageEntry } from "@/constants/animations"
+import { motion } from "framer-motion"
 
 
 interface Prompts {
@@ -19,7 +21,7 @@ export default function Experience({ pageRef }: Prompts) {
     ]
 
     return (
-        <div ref={pageRef} className="relative flex flex-col w-full gap-4 page-padding my-[10vh] overflow-hidden">
+        <motion.div ref={pageRef} variants={pageEntry} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="relative flex flex-col w-full gap-4 page-padding my-[10vh] overflow-hidden">
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
                 {backgroundIcons.map((icon) => (
                     <div key={icon.alt} className={`absolute ${icon.position} opacity-10`}> 
@@ -38,7 +40,7 @@ export default function Experience({ pageRef }: Prompts) {
                     <ExperienceItem key={exp.title} item={exp} index={index} />
                 ))}
             </ul>
-        </div>
+        </motion.div>
     )
 }
 
