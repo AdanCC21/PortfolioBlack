@@ -7,6 +7,7 @@ import { getCircularDiff, handleCarrusel } from "@/scripts/carrusel";
 import { useState } from "react";
 import { pageEntry } from "@/constants/animations";
 import { motion } from "framer-motion";
+import { sectionIconEntry, subtleFloat } from "@/constants/animations";
 
 interface Prompts {
     pageRef: React.RefObject<any>
@@ -20,6 +21,19 @@ export default function Achivements({ pageRef }: Prompts) {
 
     return (
         <motion.div ref={pageRef} variants={pageEntry} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="relative flex flex-col w-full gap-4 page-padding overflow-hidden">
+            <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                <div style={{ rotate: "-12deg" }} className="absolute left-[7%] top-[18%] opacity-[0.08]">
+                    <motion.img variants={sectionIconEntry} initial="hidden" whileInView="visible" viewport={{ once: true }} src={Icons.openCode} alt="OpenCode" className="size-10 sm:size-14" />
+                </div>
+                <div style={{ rotate: "15deg" }} className="absolute bottom-[14%] right-[8%] opacity-[0.08]">
+                    <motion.div animate={subtleFloat}>
+                        <motion.img variants={sectionIconEntry} initial="hidden" whileInView="visible" viewport={{ once: true }} src={Icons.vite} alt="Vite" className="size-9 sm:size-12" />
+                    </motion.div>
+                </div>
+                <div style={{ rotate: "-7deg" }} className="absolute right-[24%] top-[14%] opacity-[0.08]">
+                    <motion.img variants={sectionIconEntry} initial="hidden" whileInView="visible" viewport={{ once: true }} src={Icons.java} alt="Java" className="size-9 sm:size-11" />
+                </div>
+            </div>
             
 
             <div className="relative z-10 flex w-full justify-between pb-4 border-b">

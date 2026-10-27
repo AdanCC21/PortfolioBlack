@@ -2,7 +2,7 @@ import Tag from "@/components/Tag"
 import { Icons } from "@/constants/Icons"
 import { getExperiences, type Experience } from "@/constants/experience"
 import { useLanguage } from "@/hooks/useLanguage"
-import { pageEntry, experienceItemViewport } from "@/constants/animations"
+import { pageEntry, experienceItemViewport, sectionIconEntry } from "@/constants/animations"
 import { motion } from "framer-motion"
 
 
@@ -15,17 +15,19 @@ export default function Experience({ pageRef }: Prompts) {
     const experiences = getExperiences(language)
 
     const backgroundIcons = [
-        { src: Icons.prisma, alt: "Prisma", className: "size-10 -rotate-12 sm:size-14", position: "right-[8%] top-[20%]" },
-        { src: Icons.javascript, alt: "javascript", className: "size-12 rotate-6 sm:size-16", position: "left-[20%] bottom-[18%]" },
-        { src: Icons.java, alt: "java", className: "size-10 sm:size-14 rotate-20", position: "right-[18%] bottom-[12%]" },
+        { src: Icons.prisma, alt: "Prisma", className: "size-10 sm:size-14", position: "right-[8%] top-[20%]", rotate: "13deg" },
+        { src: Icons.javascript, alt: "javascript", className: "size-12 sm:size-16", position: "left-[20%] bottom-[18%]", rotate: "-11deg" },
+        { src: Icons.java, alt: "java", className: "size-10 sm:size-14", position: "right-[18%] bottom-[12%]", rotate: "8deg" },
+        { src: Icons.typescript, alt: "TypeScript", className: "size-9 sm:size-12", position: "left-[8%] top-[26%]", rotate: "-16deg" },
+        { src: Icons.python, alt: "Python", className: "size-9 sm:size-11", position: "right-[28%] top-[12%]", rotate: "10deg" },
     ]
 
     return (
         <div ref={pageRef} className="relative flex flex-col w-full gap-4 page-padding my-[10vh] overflow-hidden">
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
                 {backgroundIcons.map((icon) => (
-                    <div key={icon.alt} className={`absolute ${icon.position} opacity-10`}> 
-                        <img src={icon.src} alt={icon.alt} className={icon.className} />
+                    <div key={icon.alt} style={{ rotate: icon.rotate }} className={`absolute ${icon.position} opacity-[0.08]`}> 
+                        <motion.img variants={sectionIconEntry} initial="hidden" whileInView="visible" viewport={{ once: true }} src={icon.src} alt={icon.alt} className={icon.className} />
                     </div>
                 ))}
             </div>

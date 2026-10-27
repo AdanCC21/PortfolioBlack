@@ -1,4 +1,4 @@
-import { AnimationTime, fadeInOut } from "@/constants/animations"
+import { AnimationTime, fadeInOut, headerItemEntry, headerItemsContainer } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
 import { useLanguage } from "@/hooks/useLanguage"
 import type { Section } from "@/model/PageSection"
@@ -59,16 +59,18 @@ export default function Header({ activeSection, homeRef, expRef, projRef, achivR
                             className="absolute top-1/2 right-0 translate-x-full flex flex-col gap-2 items-start bg-(--neutral) h-fit w-[80vw] p-4 rounded-tr-xl rounded-b-xl"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            {items()}
+                            <motion.div variants={headerItemsContainer} initial="hidden" animate="visible" className="flex flex-col gap-2 items-start">
+                                {items()}
+                            </motion.div>
                             
                         </motion.div>
                     }
                 </AnimatePresence>
             </div>
 
-            <nav className="hidden md:flex w-fit items-center gap-4">
+            <motion.nav variants={headerItemsContainer} initial="hidden" animate="visible" className="hidden md:flex w-fit items-center gap-4">
                 {items()}
-            </nav>
+            </motion.nav>
 
             <Button onClick={() => setLanguage(language === 'es' ? 'en' : 'es')} label={language === 'es' ? 'EN' : 'ES'} btnClass="absolute right-4" btnStyle="outline-neutral"/>
         </header>
@@ -83,8 +85,8 @@ interface HeaderItemPrompts {
 
 function HeaderItem({ label, onClick, active }: HeaderItemPrompts) {
     return (
-        <button onClick={onClick} className={`w-fit text-xl md:text-base ${active ? 'md:font-bold md:scale-110' : 'md:text-(--text-gray)'} md:font-medium cursor-pointer ${!active && 'md:hover:scale-105'} ${AnimationTime}`}>
+        <motion.button variants={headerItemEntry} onClick={onClick} className={`w-fit text-xl md:text-base ${active ? 'md:font-bold md:scale-110' : 'md:text-(--text-gray)'} md:font-medium cursor-pointer ${!active && 'md:hover:scale-105'} ${AnimationTime}`}>
             <span>{label}</span>
-        </button>
+        </motion.button>
     )
 }

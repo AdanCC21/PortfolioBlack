@@ -2,7 +2,7 @@ import Tag from "@/components/Tag"
 import { AnimationTime } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
 import { useLanguage } from "@/hooks/useLanguage"
-import { pageEntry } from "@/constants/animations"
+import { pageEntry, sectionIconEntry, subtleFloat } from "@/constants/animations"
 import { motion } from "framer-motion"
 
 interface Prompts {
@@ -13,16 +13,20 @@ export default function About({ pageRef }: Prompts) {
     const { t } = useLanguage()
 
     const backgroundIcons = [
-        { src: Icons.typescript, alt: "Typescript", className: "size-8 rotate-12 sm:size-10", position: "left-[6%] top-[12%]" },
-        { src: Icons.cpp, alt: "c++", className: "size-10 rotate-[-10deg] sm:size-14", position: "right-[6%] bottom-[15%]" },
+        { src: Icons.typescript, alt: "Typescript", className: "size-8 sm:size-10", position: "left-[6%] top-[12%]", rotate: "12deg" },
+        { src: Icons.cpp, alt: "c++", className: "size-10 sm:size-14", position: "right-[6%] bottom-[15%]", rotate: "-13deg" },
+        { src: Icons.python, alt: "Python", className: "size-10 sm:size-12", position: "right-[18%] top-[16%]", rotate: "9deg" },
+        { src: Icons.java, alt: "Java", className: "size-9 sm:size-11", position: "left-[24%] bottom-[13%]", rotate: "-8deg" },
     ]
 
     return (
         <motion.section ref={pageRef} variants={pageEntry} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} className="relative flex flex-col min-h-screen xl:min-h-min w-screen gap-4 page-padding mb-12 overflow-hidden">
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
                 {backgroundIcons.map((icon) => (
-                    <div key={icon.alt} className={`absolute ${icon.position} opacity-10`}>
-                        <img src={icon.src} alt={icon.alt} className={icon.className} />
+                    <div key={icon.alt} style={{ rotate: icon.rotate }} className={`absolute ${icon.position} opacity-[0.08]`}>
+                        <motion.div animate={icon.alt === "c++" ? subtleFloat : undefined}>
+                            <motion.img variants={sectionIconEntry} initial="hidden" whileInView="visible" viewport={{ once: true }} src={icon.src} alt={icon.alt} className={icon.className} />
+                        </motion.div>
                     </div>
                 ))}
             </div>

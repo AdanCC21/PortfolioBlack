@@ -7,7 +7,7 @@ import { Icons } from "@/constants/Icons"
 import { getProjects, type Project } from "@/constants/projects"
 import { useLanguage } from "@/hooks/useLanguage"
 import { GetImages } from "@/scripts/images"
-import { pageEntry, pageEntryViewport } from "@/constants/animations"
+import { pageEntry, pageEntryViewport, sectionIconEntry, subtleFloat } from "@/constants/animations"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 
@@ -20,8 +20,11 @@ export default function Proyects({ projRef }: Prompts) {
     const projects = getProjects(language)
 
     const backgroundIcons = [
-        { src: Icons.tailwindcss, alt: "tailwind", className: "size-12 rotate-[-10deg] sm:size-16", position: "left-[6%] top-[12%]" },
-        { src: Icons.nextjs, alt: "Next.js", className: "size-10 rotate-12 sm:size-14", position: "right-[8%] bottom-[16%]" },    ]
+        { src: Icons.tailwindcss, alt: "tailwind", className: "size-12 sm:size-16", position: "left-[6%] top-[12%]", rotate: "-14deg" },
+        { src: Icons.nextjs, alt: "Next.js", className: "size-10 sm:size-14", position: "right-[8%] bottom-[16%]", rotate: "12deg" },
+        { src: Icons.java, alt: "Java", className: "size-10 sm:size-12", position: "right-[18%] top-[18%]", rotate: "-8deg" },
+        { src: Icons.react, alt: "React", className: "size-9 sm:size-11", position: "left-[22%] bottom-[14%]", rotate: "16deg" },
+    ]
 
     const [viewModal, showModal] = useState<boolean>(false);
     const [curProject, setProj] = useState<Project | null>(null);
@@ -45,8 +48,10 @@ export default function Proyects({ projRef }: Prompts) {
         <section ref={projRef} className="relative flex flex-col w-full min-h-[80vh] page-padding overflow-hidden">
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
                 {backgroundIcons.map((icon) => (
-                    <div key={icon.alt} className={`absolute ${icon.position} opacity-10`}>
-                        <img src={icon.src} alt={icon.alt} className={icon.className} />
+                    <div key={icon.alt} style={{ rotate: icon.rotate }} className={`absolute ${icon.position} opacity-[0.08]`}>
+                        <motion.div animate={icon.alt === "Next.js" || icon.alt === "tailwind" ? subtleFloat : undefined}>
+                            <motion.img variants={sectionIconEntry} initial="hidden" whileInView="visible" viewport={{ once: true }} src={icon.src} alt={icon.alt} className={icon.className} />
+                        </motion.div>
                     </div>
                 ))}
             </div>
@@ -71,7 +76,7 @@ export default function Proyects({ projRef }: Prompts) {
 
             </ul>
 
-            <Modal title={curProject?.title ?? t.projects.modal.title} icon={{ src: curProject?.title !== 'ActOne' ? `/projects/${curProject?.folder}/z_logo.webp` : '', alt: "logo" }} isOpen={viewModal} setIsOpen={showModal} onClose={() => { setProj(null); setImages([]); }}>
+            <Modal title={curProject?.title ?? t.projects.modal.title} icon={{ src: curProject?.title !== 'ActOne' && curProject?.title !== 'Gestor de pruebas' ? `/projects/${curProject?.folder}/z_logo.webp` : '', alt: "logo" }} isOpen={viewModal} setIsOpen={showModal} onClose={() => { setProj(null); setImages([]); }}>
                 {curProject ?
                     <>
                         <div className="flex flex-col justify-between order-1">
