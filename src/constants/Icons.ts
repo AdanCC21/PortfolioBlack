@@ -31,6 +31,7 @@ import Menu from "@/assets/icons/menu.svg"
 import Close from "@/assets/icons/close.svg"
 
 import Document from "@/assets/icons/document.svg"
+import Download from "@/assets/icons/download.svg"
 import Page from "@/assets/icons/page.svg"
 
 export const Icons = {
@@ -64,6 +65,7 @@ export const Icons = {
     menu: Menu,
     close:Close,
     document:Document,
+    download:Download,
     page:Page,
 
     linkedin:Linkedin,

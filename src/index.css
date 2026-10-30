@@ -29,10 +29,25 @@ html {
   font-family: "Hanken Grotesk", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  font-size: 16px;
+  font-size: clamp(14px, calc(13px + 0.25vw), 17px);
+  line-height: 1.5;
 
   scrollbar-width: none;
   scrollbar-color: var(--tertiary) var(--neutral);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+
+  p {
+    line-height: 1.65;
+  }
 }
 
 body {

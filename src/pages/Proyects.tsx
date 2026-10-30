@@ -61,10 +61,11 @@ export default function Proyects({ projRef }: Prompts) {
                 <span className="text-4xl opacity-10 font-bold">{'{ }'}</span>
             </div>
 
-            <ul className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 py-4">
+            <ul className="relative z-10 grid auto-rows-fr grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 py-4">
                 {projects.map((project: Project) => (
                     <motion.li
                         key={project.title}
+                        className="h-full"
                         variants={pageEntry}
                         initial="hidden"
                         whileInView="visible"

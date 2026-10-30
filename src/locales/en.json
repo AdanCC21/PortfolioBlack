@@ -5,7 +5,7 @@
     "experience": "Experience",
     "achievements": "Achievements",
     "about": "About Me",
-    "cv": "Resume",
+    "cv": "CV",
     "cvModalTitle": "Download my resume",
     "cvSpanish": "Resume in Spanish",
     "cvEnglish": "Resume in English"
@@ -19,6 +19,7 @@
     "linkedin": "Linkedin",
     "github": "Github",
     "projects": "Projects",
+    "exploreExperience": "Explore my experience",
     "more": "More",
     "less": "Less"
   },

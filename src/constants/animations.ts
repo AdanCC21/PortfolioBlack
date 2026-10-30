@@ -61,16 +61,16 @@ export const headerItemsContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
-        transition: { delayChildren: 0.18, staggerChildren: 0.1 },
+        transition: { staggerChildren: 0.1 },
     },
 };
 
 export const headerItemEntry: Variants = {
-    hidden: { opacity: 0, x: 16 },
+    hidden: { opacity: 0 },
     visible: {
         opacity: 1,
-        x: 0,
-        transition: { duration: 0.45, ease: "easeOut" },
+
+        transition: { duration: 0.32, ease: "easeInOut" },
     },
 };
 
@@ -164,12 +164,27 @@ export const sectionIconEntry: Variants = {
     },
 };
 
+export const modalFadeInOut: Variants = {
+    initial: {
+        opacity: 0,
+    },
+    animate: {
+        opacity: 1,
+    },
+    exit: {
+        opacity: 0,
+    },
+}
 export const fadeInOut: Variants = {
     initial: {
         opacity: 0,
     },
     animate: {
         opacity: 1,
+        transition: {
+            duration: 1.28,
+            ease: "easeInOut"
+        }
     },
     exit: {
         opacity: 0,
@@ -190,3 +205,18 @@ export const showScale: Variants = {
         scale: 0.9,
     },
 };
+
+export const shopUpFadeIn: Variants = {
+    hidden: {
+        opacity: 0,
+        y: 20
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 1.5,
+            ease:"easeInOut"
+        }
+    }
+}

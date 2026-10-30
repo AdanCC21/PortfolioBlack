@@ -17,8 +17,10 @@ interface ProjectCardProps {
 export default function ProjectCard({ image, title, description, techs = [], onDetails }: ProjectCardProps) {
     const { language } = useLanguage()
     return (
-        <div className="flex flex-col flex-1 gap-3 cursor-pointer" onClick={() => { onDetails?.(); }}>
-            <img src={image} alt={title} className="w-full object-cover aspect-video rounded-sm" />
+        <div className="group flex h-full flex-col gap-3 cursor-pointer rounded-xl bg-(--neutral)/60 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/25 hover:shadow-lg hover:shadow-black/5" onClick={() => { onDetails?.(); }}>
+            <div className="overflow-hidden rounded-lg">
+                <img src={image} alt={title} className="w-full object-cover aspect-video transition-transform duration-500 group-hover:scale-105" />
+            </div>
 
             <div className="flex flex-col gap-3">
                 <h3 className="text-2xl font-bold">{title}</h3>
@@ -28,7 +30,7 @@ export default function ProjectCard({ image, title, description, techs = [], onD
                 </blockquote>
             </div>
 
-            <div className="flex items-center justify-between gap-2 flex-wrap">
+            <div className="mt-auto flex items-center justify-between gap-2 flex-wrap">
                 {techs.length > 0 && (
                     <ul className="flex flex-nowrap items-center gap-2 max-w-4/5 scroll-hidden overflow-auto">
                         {techs.map((tech) => (

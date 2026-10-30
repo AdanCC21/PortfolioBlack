@@ -1,5 +1,6 @@
 import Button from "@/components/Button"
-import { AnimationTime, listItemsContainer, subtleFloat, subtleIconDrift } from "@/constants/animations"
+import DownloadCv from "@/components/DownloadCv"
+import { AnimationTime, listItemsContainer, shopUpFadeIn, subtleFloat, subtleIconDrift } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
 import { useLanguage } from "@/hooks/useLanguage"
 import { homeBackgroundEntry, homeImageEntry, homeItemEntry, homeNestEntry, homeReactEntry, homeVueEntry, pageEntryViewport } from "@/constants/animations"
@@ -8,10 +9,10 @@ import { type RefObject } from "react"
 
 interface HomeProps {
   homeRef: RefObject<any>
-  projRef: RefObject<any>
+  expRef: RefObject<any>
 }
 
-export default function Home({ homeRef, projRef }: HomeProps) {
+export default function Home({ homeRef, expRef }: HomeProps) {
   const { t } = useLanguage()
 
   return (
@@ -65,41 +66,26 @@ export default function Home({ homeRef, projRef }: HomeProps) {
           </motion.div>
 
           <motion.div variants={homeItemEntry} className="mt-4 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
-            <a href="/CV_Adan_Gonzalez.pdf" download="CV_Adan_Gonzalez.pdf">
-              <Button label={t.home.cv} icon={{ src: Icons.document, alt: "cv", iconRight: true }} onClick={() => { }} btnStyle="outline-secondary" />
-            </a>
+            <DownloadCv label={t.home.cv} icon={{ src: Icons.document, alt: "cv", iconRight: true }} btnStyle="outline-secondary" />
 
             <Button label={t.home.linkedin} icon={{ src: Icons.linkedin, alt: "Linkedin", iconRight: true }} onClick={() => { window.open("https://www.linkedin.com/in/adan-gonzalez-ceseña-584411338", "_blank") }} btnStyle="outline-secondary" />
 
             <Button label={t.home.github} icon={{ src: Icons.github, alt: "Github", iconRight: true }} onClick={() => { window.open("https://github.com/AdanCC21", "_blank") }} btnStyle="outline-secondary" />
           </motion.div>
-          
-          <motion.button
-            variants={homeItemEntry}
-            className={`hidden lg:flex absolute bottom-0 left-0 w-fit items-center gap-2 cursor-pointer hover:scale-105 ${AnimationTime}`}
-            onClick={() => projRef.current?.scrollIntoView({ behavior: "smooth" })}
-          >
-            <div className="flex flex-col rounded-md bg-(--primary) p-2">
-              <img src={Icons.arrowDown} alt="go down" className="size-4 rotate-90" />
-            </div>
-            <span className="text-base">{t.home.projects}</span>
-          </motion.button>
         </motion.div>
 
       </div>
 
       <motion.button
-        variants={homeItemEntry}
+        variants={shopUpFadeIn}
         initial="hidden"
-        whileInView="show"
-        viewport={pageEntryViewport}
-        className={`flex lg:hidden absolute bottom-10 right-1/2 translate-x-1/2 w-fit items-center gap-2 cursor-pointer hover:scale-105 ${AnimationTime}`}
-        onClick={() => projRef.current?.scrollIntoView({ behavior: "smooth" })}
+        animate="show"
+        className={`group flex absolute bottom-10 right-1/2 translate-x-1/2 w-fit items-center gap-2 cursor-pointer hover:scale-105 ${AnimationTime}`}
+        onClick={() => expRef.current?.scrollIntoView({ behavior: "smooth" })}
       >
-        <div className="flex flex-col rounded-md bg-(--primary) p-2">
-          <img src={Icons.arrowDown} alt="go down" className="size-4 rotate-90" />
-        </div>
-        <span className="text-base">{t.home.projects}</span>
+        <img src={Icons.arrowDown} alt="go down" className="opacity-40 group-hover:opacity-100 size-3 rotate-90 invert " />
+        <span className="text-sm opacity-40 group-hover:opacity-100">{t.home.exploreExperience}</span>
+        <img src={Icons.arrowDown} alt="go down" className="opacity-40 group-hover:opacity-100 size-3 rotate-90 invert " />
       </motion.button>
 
       <motion.div variants={homeBackgroundEntry} initial="hidden" whileInView="visible" viewport={pageEntryViewport} className="absolute bottom-15 right-15">

@@ -1,7 +1,7 @@
 import { AnimationTime, fadeInOut, headerItemEntry, headerItemsContainer } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
 import { useLanguage } from "@/hooks/useLanguage"
-import Modal from "@/components/Modal"
+import DownloadCv from "@/components/DownloadCv"
 import type { Section } from "@/model/PageSection"
 import { ScrollTo } from "@/scripts/scroll"
 import { AnimatePresence, motion } from "framer-motion"
@@ -19,8 +19,7 @@ interface Prompts {
 
 export default function Header({ activeSection, homeRef, expRef, projRef, achivRef, aboutRef }: Prompts) {
     const [viewMenu, showMenu] = useState(false);
-    const [viewCvModal, showCvModal] = useState(false)
-    const { t } = useLanguage()
+    const { language, setLanguage, t } = useLanguage()
 
     useEffect(() => {
         viewMenu ?
@@ -35,8 +34,8 @@ export default function Header({ activeSection, homeRef, expRef, projRef, achivR
     const items = () => (
         <>
             <HeaderItem label={t.header.home} onClick={() => {  ScrollTo(homeRef); showMenu(false) }} active={activeSection === 'home'} />
-            <HeaderItem label={t.header.projects} onClick={() => {  ScrollTo(projRef); showMenu(false) }} active={activeSection === 'proj'} />
             <HeaderItem label={t.header.experience} onClick={() => { ScrollTo(expRef); showMenu(false) }} active={activeSection === 'exp'} />
+            <HeaderItem label={t.header.projects} onClick={() => {  ScrollTo(projRef); showMenu(false) }} active={activeSection === 'proj'} />
             <HeaderItem label={t.header.achievements} onClick={() => { ScrollTo(achivRef); showMenu(false) }} active={activeSection === 'achiv'} />
             <HeaderItem label={t.header.about} onClick={() => { ScrollTo(aboutRef); showMenu(false) }} active={activeSection === 'about'} />
         </>
@@ -74,20 +73,10 @@ export default function Header({ activeSection, homeRef, expRef, projRef, achivR
                 {items()}
             </motion.nav>
 
-            <Button onClick={() => showCvModal(true)} label={t.header.cv} btnClass="absolute right-4" btnStyle="outline-neutral"/>
-                
-            <Modal title={t.header.cvModalTitle} icon={{ src: "", alt: "" }} isOpen={viewCvModal} setIsOpen={showCvModal}>
-                <div className="flex flex-col gap-3 py-2">
-                    <a href="/CV_Adan_Gonzalez_ES.pdf" download="CV_Adan_Gonzalez.pdf" className="flex items-center justify-between gap-4 rounded-lg border border-(--secondary) p-4 hover:bg-black/10">
-                        <span className="text-lg">{t.header.cvSpanish}</span>
-                        <img src={Icons.document} alt="" className="size-6" />
-                    </a>
-                    <a href="/CV_Adan_Gonzalez_EN.pdf" download="CV_Adan_Gonzalez_EN.pdf" className="flex items-center justify-between gap-4 rounded-lg border border-(--secondary) p-4 hover:bg-black/10">
-                        <span className="text-lg">{t.header.cvEnglish}</span>
-                        <img src={Icons.document} alt="" className="size-6" />
-                    </a>
-                </div>
-            </Modal>
+            <div className="absolute right-4 flex items-center gap-2">
+                <DownloadCv label={t.header.cv} btnStyle="outline-neutral" />
+                <Button onClick={() => setLanguage(language === 'es' ? 'en' : 'es')} label={language === 'es' ? 'EN' : 'ES'} btnStyle="outline-neutral" />
+            </div>
         </header>
     )
 }

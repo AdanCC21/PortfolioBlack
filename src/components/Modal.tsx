@@ -1,8 +1,10 @@
-import { fadeInOut, showScale } from "@/constants/animations"
+import { fadeInOut, modalFadeInOut, showScale } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
 import type { ImageModel } from "@/model/Image"
 import { AnimatePresence, easeInOut, motion } from "framer-motion"
 import { useEffect, type Dispatch, type SetStateAction } from "react"
+
+export type ModalSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "fit"
 
 interface Prompts {
     children: React.ReactNode
@@ -13,10 +15,22 @@ interface Prompts {
     isOpen: boolean
     setIsOpen: Dispatch<SetStateAction<boolean>>
 
+    size?: ModalSize
+
     onClose?: () => void
 }
 
-export default function Modal({ children, title, icon, isOpen, setIsOpen, onClose }: Prompts) {
+const modalSizeClasses: Record<ModalSize, string> = {
+    xs: "w-5/6 max-w-sm h-fit max-h-9/10",
+    sm: "w-5/6 max-w-lg h-fit max-h-9/10",
+    md: "w-5/6 md:w-4/6 h-full md:h-9/10",
+    lg: "w-5/6 max-w-5xl h-9/10",
+    xl: "w-5/6 max-w-6xl h-9/10",
+    "2xl": "w-5/6 max-w-7xl h-9/10",
+    fit: "w-fit max-w-[calc(100vw-2rem)] h-fit max-h-9/10",
+}
+
+export default function Modal({ children, title, icon, isOpen, setIsOpen, onClose, size = "md" }: Prompts) {
 
     useEffect(() => {
         if (isOpen) {
@@ -34,8 +48,8 @@ export default function Modal({ children, title, icon, isOpen, setIsOpen, onClos
     return (
         <AnimatePresence mode="wait">
             {isOpen && (
-                <motion.div variants={fadeInOut} initial="initial" animate="animate" exit="exit" transition={{ duration: .3, ease: easeInOut }} className="fixed top-0 left-0 flex items-center justify-center w-screen h-screen py-8 bg-black/80 overflow-y-auto z-100" onClick={() => { setIsOpen(false); onClose?.() }}>
-                    <motion.div variants={showScale} initial="initial" animate="animate" exit="exit" transition={{ type: "spring", stiffness: 200, damping: 25, duration: .3, ease: easeInOut }} className="flex flex-col gap-4 w-5/6 md:w-4/6 h-full md:h-9/10 bg-(--neutral) rounded-xl p-4 z-101" onClick={(e) => { e.stopPropagation(); }}>
+                <motion.div variants={modalFadeInOut} initial="initial" animate="animate" exit="exit" transition={{ duration: .3, ease: easeInOut }} className="fixed top-0 left-0 flex items-center justify-center w-screen h-screen py-8 bg-black/80 overflow-y-auto z-100" onClick={() => { setIsOpen(false); onClose?.() }}>
+                    <motion.div variants={showScale} initial="initial" animate="animate" exit="exit" transition={{ type: "spring", stiffness: 200, damping: 25, duration: .3, ease: easeInOut }} className={`flex flex-col gap-4 ${modalSizeClasses[size]} bg-(--neutral) rounded-xl p-4 z-101`} onClick={(e) => { e.stopPropagation(); }}>
                         <header className="flex gap-4 items-center h-fit">
                             {icon.src.trim() &&
                                 <img src={icon.src} alt={icon.alt} className={`${icon.className} size-7 w-fit`} />
@@ -45,7 +59,7 @@ export default function Modal({ children, title, icon, isOpen, setIsOpen, onClos
                             <img src={Icons.close} alt="Cerrar" className="h-8 w-fit ml-auto hover:scale-110 cursor-pointer" onClick={() => { setIsOpen(false); onClose?.() }} />
                         </header>
 
-                        <main className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
+                        <main className={`flex flex-col ${size === "fit" ? "flex-none" : "flex-1"} overflow-y-auto overflow-x-hidden`}>
                             {children}
                         </main>
 
