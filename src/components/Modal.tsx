@@ -44,6 +44,19 @@ export default function Modal({ children, title, icon, isOpen, setIsOpen, onClos
         }
     }, [isOpen])
 
+    useEffect(() => {
+        if (!isOpen) return
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key !== "Escape" || document.querySelector("[data-image-viewer='true']")) return
+            setIsOpen(false)
+            onClose?.()
+        }
+
+        window.addEventListener("keydown", handleKeyDown)
+        return () => window.removeEventListener("keydown", handleKeyDown)
+    }, [isOpen, onClose, setIsOpen])
+
 
     return (
         <AnimatePresence mode="wait">

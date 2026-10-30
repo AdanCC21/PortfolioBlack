@@ -80,21 +80,20 @@ export default function Proyects({ projRef }: Prompts) {
             <Modal title={curProject?.title ?? t.projects.modal.title} icon={{ src: curProject?.title !== 'ActOne' && curProject?.title !== 'Gestor de pruebas' ? `/projects/${curProject?.folder}/z_logo.webp` : '', alt: "logo" }} isOpen={viewModal} setIsOpen={showModal} onClose={() => { setProj(null); setImages([]); }}>
                 {curProject ?
                     <>
-                        <div className="flex flex-col justify-between order-1">
+                        <div className="flex flex-col justify-between">
                             <div className="relative flex flex-col items-center h-[20vh] md:h-[30vh] lg:h-[50vh] gap-4 w-full overflow-hidden mb-8">
                                 <Carrusel images={projectImages} indexActive={indexActive} setIndex={setIndex} fullScreen={fullScren} setFullScreen={setFullScreen} />
                             </div>
                         </div>
 
-                        <section className="flex flex-col md:flex-row gap-4 order-4 md:order-2">
-                            <ProjectData title={t.projects.modal.date} data={curProject.date} />
-                            <ProjectData title={t.projects.modal.role} data={curProject.rol} />
-                            <ProjectData title={t.projects.modal.location} data={curProject.location} />
-                            {(curProject.team && curProject.team.length > 0) &&
-                                <ProjectData title={t.projects.modal.team} data={curProject.team} />
-                            }
+                        <section className="grid grid-cols-1 gap-8 md:grid-cols-2 my-4">
+                            <ProjectDescription title={t.projects.modal.overview} description={curProject.whatIs} />
+                            <ProjectDescription title={t.projects.modal.contribution} description={curProject.whatIdo} />
+                        </section>
 
-                            <ul className="flex flex-wrap md:flex-nowrap items-center md:ml-auto gap-2 md:max-w-3/5 scroll-hidden overflow-auto">
+                        <section className="flex flex-col gap-4 mt-4 mb-8">
+                            <h3 className="text-sm font-medium uppercase tracking-wider text-(--text-gray)">{t.projects.modal.technologies}</h3>
+                            <ul className="flex flex-wrap gap-2">
                                 {curProject.tecs.map((tec) => (
                                     <li key={tec.label}>
                                         <Tag label={tec.label} icon={tec.img} />
@@ -103,23 +102,16 @@ export default function Proyects({ projRef }: Prompts) {
                             </ul>
                         </section>
 
-                        <hr className="bg-whtie my-8 w-4/5 mx-auto order-3 md:order-3" />
-
-                        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 order-2 md:order-4">
-                            <article className="flex flex-col gap-2">
-                                <h3 className="text-xl font-medium">{t.projects.modal.whatIs} {curProject?.title}?</h3>
-                                <p className="text-sm md:text-base">
-                                    {curProject.whatIs}
-                                </p>
-                            </article>
-
-                            <article className="flex flex-col gap-2">
-                                <h3 className="text-xl font-medium">{t.projects.modal.whatIdo}</h3>
-                                <p className="text-sm md:text-base">
-                                    {curProject.whatIdo}
-                                </p>
-                            </article>
+                        <section aria-label={t.projects.modal.details} className="grid grid-cols-2 gap-x-8 gap-y-6 border-t border-white/10 py-7 md:grid-cols-4">
+                            <ProjectData title={t.projects.modal.role} data={curProject.rol} />
+                            <ProjectData title={t.projects.modal.date} data={curProject.date} />
+                            <ProjectData title={t.projects.modal.location} data={curProject.location} />
+                            {(curProject.team && curProject.team.length > 0) &&
+                                <ProjectData title={t.projects.modal.team} data={curProject.team} />
+                            }
                         </section>
+
+
 
                         {(curProject.repo || curProject.page) &&
                             <section className="flex flex-wrap justify-center md:justify-end gap-2 order-5 mt-8 mb-2">
@@ -145,18 +137,27 @@ export default function Proyects({ projRef }: Prompts) {
 
 function ProjectData({ title, data }: { title: string, data: string | string[] }) {
     return (
-        <article className="flex flex-col">
-            <h5 className="text-lg font-medium">{title}</h5>
+        <article className="flex min-w-0 flex-col gap-1">
+            <h4 className="text-xs font-medium uppercase tracking-wider text-(--text-gray)">{title}</h4>
 
             {typeof data === 'string' ?
-                <span className="text-sm text-(--text-gray)">{data}</span>
+                <span className="text-sm">{data}</span>
                 :
                 <>
                     {data.map((cur: string) => (
-                        <span key={cur} className="text-sm text-(--text-gray)">{cur}</span>
+                        <span key={cur} className="text-sm">{cur}</span>
                     ))}
                 </>
             }
+        </article>
+    )
+}
+
+function ProjectDescription({ title, description }: { title: string, description: string }) {
+    return (
+        <article className="flex flex-col gap-3 border-l border-white/20 pl-5">
+            <h3 className="text-lg font-semibold">{title}</h3>
+            <p className="text-sm leading-relaxed text-(--text-gray) sm:text-base">{description}</p>
         </article>
     )
 }

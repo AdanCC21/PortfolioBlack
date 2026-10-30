@@ -59,6 +59,10 @@
     "title": "Projects",
     "modal": {
       "title": "Project",
+      "overview": "Project overview",
+      "contribution": "My contribution",
+      "details": "Project details",
+      "technologies": "Technologies",
       "whatIs": "What is",
       "whatIdo": "What did I do?",
       "date": "Date",
