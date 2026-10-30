@@ -1,4 +1,4 @@
-import { fadeInOut, modalFadeInOut, showScale } from "@/constants/animations"
+import { modalFadeInOut, showScale } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
 import type { ImageModel } from "@/model/Image"
 import { AnimatePresence, easeInOut, motion } from "framer-motion"
