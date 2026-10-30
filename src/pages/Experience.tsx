@@ -57,27 +57,27 @@ function ExperienceItem({ item }: ExpPrompts) {
             initial="hidden"
             whileInView="visible"
             viewport={experienceItemViewport}
-            className="flex w-full items-stretch gap-3"
+            className="group flex w-full items-stretch gap-4 sm:gap-6"
         >
-            <div className="flex w-full flex-col gap-4 rounded-xl bg-(--neutral) p-4 mb-4">
-                <span className="text-xs text-(--gray)">{item.place}</span>
-                <div className="flex w-full items-center justify-between">
-                    <h1 className="text-2xl font-bold">{item.title}</h1>
-                    <span className="text-sm">{item.date}</span>
+            <div className="relative flex w-4 shrink-0 flex-col items-center">
+                <div className="z-10 mt-1 size-3 shrink-0 rounded-full border border-white/50 bg-(--bg) transition-colors duration-300 group-hover:bg-white"></div>
+                <div className="absolute top-4 bottom-0 w-px bg-white/15"></div>
+            </div>
+
+            <div className="mb-8 flex w-full flex-col gap-3 border-b border-white/10 pb-6 transition-colors duration-300 group-hover:border-white/25">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                    <span className="text-sm text-(--text-gray)">{item.place}</span>
+                    <span className="text-xs text-(--text-gray) sm:text-sm">{item.date}</span>
                 </div>
-                <p className="text-base">
+                <h3 className="text-xl font-semibold sm:text-2xl">{item.title}</h3>
+                <p className="max-w-4xl text-sm text-(--text-gray) sm:text-base">
                     {item.description}
                 </p>
-                <ul className="flex gap-2 flex-wrap">
+                <ul className="mt-1 flex flex-wrap gap-2">
                     {item.tecs.map((tec) => (
                         <Tag key={`${item.title}-${tec.label}`} label={tec.label} icon={tec.img} />
                     ))}
                 </ul>
-            </div>
-
-            <div className="order-first relative flex w-4 shrink-0 flex-col items-center">
-                <div className="size-3 shrink-0 rounded-full bg-white"></div>
-                <div className="w-1 flex-1 rounded-full bg-white"></div>
             </div>
         </motion.li>
     )

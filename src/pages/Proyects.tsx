@@ -122,7 +122,7 @@ export default function Proyects({ projRef }: Prompts) {
                         </section>
 
                         {(curProject.repo || curProject.page) &&
-                            <section className="flex flex-wrap justify-center md:justify-end gap-2 order-5 mt-8">
+                            <section className="flex flex-wrap justify-center md:justify-end gap-2 order-5 mt-8 mb-2">
                                 {curProject.repo &&
                                     <Button label={t.projects.modal.repo} onClick={() => window.open(curProject.repo, "_blank")} btnStyle="outline-secondary" icon={{ src: Icons.github, alt: "github" }} />
                                 }

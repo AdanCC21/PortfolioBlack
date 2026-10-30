@@ -48,18 +48,18 @@ export default function Modal({ children, title, icon, isOpen, setIsOpen, onClos
     return (
         <AnimatePresence mode="wait">
             {isOpen && (
-                <motion.div variants={modalFadeInOut} initial="initial" animate="animate" exit="exit" transition={{ duration: .3, ease: easeInOut }} className="fixed top-0 left-0 flex items-center justify-center w-screen h-screen py-8 bg-black/80 overflow-y-auto z-100" onClick={() => { setIsOpen(false); onClose?.() }}>
-                    <motion.div variants={showScale} initial="initial" animate="animate" exit="exit" transition={{ type: "spring", stiffness: 200, damping: 25, duration: .3, ease: easeInOut }} className={`flex flex-col gap-4 ${modalSizeClasses[size]} bg-(--neutral) rounded-xl p-4 z-101`} onClick={(e) => { e.stopPropagation(); }}>
-                        <header className="flex gap-4 items-center h-fit">
+                <motion.div variants={modalFadeInOut} initial="initial" animate="animate" exit="exit" transition={{ duration: .3, ease: easeInOut }} className="fixed top-0 left-0 flex items-center justify-center w-screen h-screen py-8 bg-black/70 overflow-y-auto z-100" onClick={() => { setIsOpen(false); onClose?.() }}>
+                    <motion.div variants={showScale} initial="initial" animate="animate" exit="exit" transition={{ type: "spring", stiffness: 200, damping: 25, duration: .3, ease: easeInOut }} className={`flex flex-col gap-4 ${modalSizeClasses[size]} border border-white/10 bg-(--bg) rounded-2xl p-5 shadow-2xl shadow-black/40 z-101 sm:p-6`} onClick={(e) => { e.stopPropagation(); }}>
+                        <header className="flex gap-4 items-center h-fit border-b border-white/10 pb-3">
                             {icon.src.trim() &&
                                 <img src={icon.src} alt={icon.alt} className={`${icon.className} size-7 w-fit`} />
                             }
-                            <h2 className="text-2xl font-medium">{title}</h2>
+                            <h2 className="text-xl font-semibold sm:text-2xl">{title}</h2>
 
-                            <img src={Icons.close} alt="Cerrar" className="h-8 w-fit ml-auto hover:scale-110 cursor-pointer" onClick={() => { setIsOpen(false); onClose?.() }} />
+                            <img src={Icons.close} alt="Cerrar" className="ml-auto h-7 w-fit cursor-pointer opacity-60 transition-opacity hover:opacity-100" onClick={() => { setIsOpen(false); onClose?.() }} />
                         </header>
 
-                        <main className={`flex flex-col ${size === "fit" ? "flex-none" : "flex-1"} overflow-y-auto overflow-x-hidden`}>
+                        <main className={`flex flex-col ${size === "fit" ? "flex-none" : "flex-1"} overflow-y-auto overflow-x-hidden pt-1`}>
                             {children}
                         </main>
 
