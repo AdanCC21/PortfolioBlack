@@ -4,7 +4,11 @@
     "projects": "Proyectos",
     "experience": "Experiencia",
     "achievements": "Logros",
-    "about": "Sobre Mi"
+    "about": "Sobre Mi",
+    "cv": "CV",
+    "cvModalTitle": "Descarga mi CV",
+    "cvSpanish": "CV en español",
+    "cvEnglish": "CV en inglés"
   },
   "home": {
     "role": "Desarrollador Full Stack",

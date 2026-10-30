@@ -4,7 +4,11 @@
     "projects": "Projects",
     "experience": "Experience",
     "achievements": "Achievements",
-    "about": "About Me"
+    "about": "About Me",
+    "cv": "Resume",
+    "cvModalTitle": "Download my resume",
+    "cvSpanish": "Resume in Spanish",
+    "cvEnglish": "Resume in English"
   },
   "home": {
     "role": "Full Stack Developer",

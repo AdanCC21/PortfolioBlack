@@ -1,6 +1,7 @@
 import { AnimationTime, fadeInOut, headerItemEntry, headerItemsContainer } from "@/constants/animations"
 import { Icons } from "@/constants/Icons"
 import { useLanguage } from "@/hooks/useLanguage"
+import Modal from "@/components/Modal"
 import type { Section } from "@/model/PageSection"
 import { ScrollTo } from "@/scripts/scroll"
 import { AnimatePresence, motion } from "framer-motion"
@@ -18,7 +19,8 @@ interface Prompts {
 
 export default function Header({ activeSection, homeRef, expRef, projRef, achivRef, aboutRef }: Prompts) {
     const [viewMenu, showMenu] = useState(false);
-    const { language, setLanguage, t } = useLanguage()
+    const [viewCvModal, showCvModal] = useState(false)
+    const { t } = useLanguage()
 
     useEffect(() => {
         viewMenu ?
@@ -72,7 +74,20 @@ export default function Header({ activeSection, homeRef, expRef, projRef, achivR
                 {items()}
             </motion.nav>
 
-            <Button onClick={() => setLanguage(language === 'es' ? 'en' : 'es')} label={language === 'es' ? 'EN' : 'ES'} btnClass="absolute right-4" btnStyle="outline-neutral"/>
+            <Button onClick={() => showCvModal(true)} label={t.header.cv} btnClass="absolute right-4" btnStyle="outline-neutral"/>
+                
+            <Modal title={t.header.cvModalTitle} icon={{ src: "", alt: "" }} isOpen={viewCvModal} setIsOpen={showCvModal}>
+                <div className="flex flex-col gap-3 py-2">
+                    <a href="/CV_Adan_Gonzalez_ES.pdf" download="CV_Adan_Gonzalez.pdf" className="flex items-center justify-between gap-4 rounded-lg border border-(--secondary) p-4 hover:bg-black/10">
+                        <span className="text-lg">{t.header.cvSpanish}</span>
+                        <img src={Icons.document} alt="" className="size-6" />
+                    </a>
+                    <a href="/CV_Adan_Gonzalez_EN.pdf" download="CV_Adan_Gonzalez_EN.pdf" className="flex items-center justify-between gap-4 rounded-lg border border-(--secondary) p-4 hover:bg-black/10">
+                        <span className="text-lg">{t.header.cvEnglish}</span>
+                        <img src={Icons.document} alt="" className="size-6" />
+                    </a>
+                </div>
+            </Modal>
         </header>
     )
 }
